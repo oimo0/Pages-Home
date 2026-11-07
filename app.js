@@ -1,6 +1,7 @@
 /* ASRO Pages-Home: progressive enhancement, no external dependencies */
 (function(){
   'use strict';
+  document.documentElement.classList.add('has-js');
   const $=(selector,root=document)=>root.querySelector(selector);
   const navToggle=$('#mobileToggle');
   const mobileNav=$('#mobileNav');
