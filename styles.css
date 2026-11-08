@@ -469,3 +469,56 @@ html.xmas .xmas-baubles .bauble.b3 { animation-delay: -4s; animation-duration: 5
   .xmas-sparkle { opacity: .5; }
 }
 html.xmas .cta h2::after { width: 130px; margin-left: auto; margin-right: auto; background: linear-gradient(90deg, transparent, #c6a15b, transparent); }
+
+
+/* ===== ASRO New Year (Japan Standard Time, Dec 25 noon – Jan 2 09:00) ===== */
+html.newyear body { background: #fffaf0; }
+html.newyear .site-header { background: rgba(255,250,240,.96); border-bottom: 1px solid rgba(154,42,42,.21); }
+html.newyear .hero { background: radial-gradient(ellipse at 76% 15%, rgba(251,207,122,.22), transparent 54%), #fffaf0; }
+html.newyear .hero-bg::before { background: radial-gradient(circle,rgba(209,166,68,.16),transparent 62%); }
+html.newyear .hero-bg::after { background: radial-gradient(circle,rgba(170,46,53,.10),transparent 62%); }
+html.newyear .eyebrow, html.newyear .news-card time, html.newyear .fcard .num { color: #a33c35; }
+html.newyear .chip { border-color: rgba(160,48,48,.28); color: #8f302d; }
+html.newyear .btn-dark, html.newyear .header-cta { background: linear-gradient(120deg,#832f31,#bc4942); color: white; }
+html.newyear .marquee { background: #173d2b; }
+html.newyear .sec-head { border-top: 1px solid rgba(181,132,53,.3); }
+html.newyear .pcard:hover, html.newyear .fcard:hover { border-color: #c8a35b; }
+html.newyear .xmas-baubles, html.newyear .xmas-badge, html.newyear .xmas-note { display: none !important; }
+.ny-scene, .ny-confetti { pointer-events: none; }
+.ny-scene { position: fixed; inset: 0; z-index: 2010; overflow: hidden; }
+.ny-rope { position: absolute; top: 0; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; width: min(380px,60vw); height: 24px; color: #bd9341; opacity: .85; }
+.ny-rope-string { flex: 1; height: 4px; background: repeating-linear-gradient(100deg,#be943e 0 5px,#e6c980 5px 10px); border-radius: 8px; }
+.ny-knot { font-size: 18px; color: #b23c38; margin: 0 8px; }
+.ny-shide { font-size: 12px; margin: 0 8px; color: #fff; text-shadow: 0 1px #bf923a,0 -1px #bf923a,1px 0 #bf923a; }
+.ny-corner { position: absolute; bottom: 14px; width: 70px; height: 100px; display: flex; align-items: flex-end; opacity: .92; }
+.ny-left { left: max(8px,calc((100vw - 1500px)/2)); }
+.ny-right { right: max(8px,calc((100vw - 1500px)/2)); transform: scaleX(-1); }
+.ny-pine { font-size: 63px; filter: drop-shadow(0 4px 9px rgba(16,72,40,.16)); }
+.ny-sunrise { position: absolute; right: 7%; top: 6%; width: clamp(120px,26vw,300px); aspect-ratio: 1.25; z-index: 0; overflow: hidden; opacity: .74; }
+.ny-sun { position: absolute; display: block; width: 53%; aspect-ratio:1; border-radius: 50%; left: 25%; top: 7%; background: radial-gradient(circle at 42% 38%,#ffecc4 0%,#eaba68 52%,#d26b4d 95%); box-shadow: 0 0 36px 12px rgba(229,163,76,.18); animation: nyRise 8s ease-in-out infinite alternate; }
+.ny-mountain { position: absolute; width: 72%; height: 28%; left: 14%; bottom: 10%; background: #2a5646; clip-path: polygon(0% 100%,32% 72%,48% 18%,60% 55%,73% 70%,100% 100%); opacity: .75; }
+.ny-horizon { position: absolute; width: 95%; left: 2%; bottom: 9%; height: 2px; background: linear-gradient(90deg,transparent,#bc9a58,transparent); }
+.ny-greeting { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 7px; width: fit-content; margin: 6px 0 18px; padding: 13px 24px 15px 18px; border-left: 3px solid #b74442; background: linear-gradient(90deg,rgba(255,250,236,.96),rgba(255,250,236,.34)); }
+.ny-label { color: #997038; font-size: 11px; font-weight: 700; letter-spacing: .23em; }
+.ny-greet-main { color: #963332; font-size: clamp(27px,4vw,48px); font-family: "Noto Serif JP",serif; letter-spacing: .14em; line-height: 1.3; }
+.ny-greet-sub { font-size: clamp(12px,1.35vw,15px); color: #534939; font-weight: 600; }
+.ny-footer { text-align: center; font-size: 13px; letter-spacing: .4em; color: #a33c35; border-top: 1px solid rgba(165,123,55,.35); padding: 16px; margin: 0; }
+.ny-confetti { position: fixed; inset: 0; overflow: hidden; z-index: 2000; }
+.ny-star { position: absolute; color: #b9964c; font-size: 14px; opacity: .48; animation: nyShimmer 6s ease-in-out infinite alternate; }
+.ny-star:nth-child(4n) { color: #b64d46; font-size: 10px; }
+.ny-star:nth-child(5n) { color: #39704c; font-size: 12px; }
+@keyframes nyRise { from { transform: translateY(9px); } to { transform: translateY(-5px); } }
+@keyframes nyShimmer { 0%,100% { opacity: .15; transform: translateY(0) rotate(0); } 50% { opacity: .68; transform: translateY(-7px) rotate(25deg); } }
+@media (max-width: 760px) {
+  .ny-rope { width: min(230px,48vw); height: 16px; opacity: .55; }
+  .ny-corner { width: 42px; height: 55px; bottom: 3px; opacity: .62; }
+  .ny-pine { font-size: 36px; }
+  .ny-sunrise { width: 145px; right: 0; top: 6%; opacity: .35; }
+  .ny-greeting { margin-top: 8px; margin-bottom: 16px; padding: 10px 14px; max-width: 100%; }
+  .ny-greet-main { font-size: 30px; }
+  .ny-greet-sub { font-size: 12px; }
+  .ny-star { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ny-star,.ny-sun { animation: none !important; }
+}
