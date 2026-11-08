@@ -1,233 +1,177 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fbfbfa">
-<meta name="description" content="ASRO — 明日を、創る。日本語AIの研究開発、クリエイティブ技術、セキュリティ。まだない可能性を、技術で切りひらく。">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="ASRO — 明日を、創る。">
-<meta property="og:description" content="まだない可能性を、技術で切りひらく。">
-<link rel="icon" href="./assets/asro-symbol.svg" type="image/svg+xml">
-<title>ASRO — 明日を、創る。</title>
-<style>
-:root{--paper:#fbfbfa;--white:#fff;--ink:#141517;--muted:#737576;--line:#dedfdc;--blue:#306be8;--limestone:#f1f0ed;--content:1330px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{background:var(--paper);margin:0;color:var(--ink);font-family:Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.7;overflow-x:hidden}
-body.menu-open{overflow:hidden}
-a{color:inherit;text-decoration:none}button{font:inherit}a,button{-webkit-tap-highlight-color:transparent}
-button{cursor:pointer}
-:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
-::selection{background:#b4c8fa}
-.skip{position:fixed;left:10px;top:-70px;background:#fff;color:#000;z-index:90;padding:10px 18px}.skip:focus{top:10px}
-.container{width:min(calc(100% - 88px),var(--content));margin-inline:auto}
-.site-head{height:88px;border-bottom:1px solid #e3e3e0;background:#fbfbfae8;backdrop-filter:blur(16px);position:sticky;top:0;z-index:40}
-.site-head-inner{display:flex;align-items:center;justify-content:space-between;height:100%;gap:35px}
-.logo img{display:block;width:114px;height:auto}
-.nav{display:flex;align-items:center;gap:clamp(20px,2.5vw,46px);margin-left:auto}
-.nav a{font-family:Arial,system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.015em;transition:opacity .2s}
-.nav a:hover{opacity:.5}
-.nav .nav-cta{border:1px solid #27292a;border-radius:100px;padding:10px 18px;display:inline-flex;align-items:center;gap:22px;white-space:nowrap}
-.nav .nav-cta:hover{background:#141517;color:#fff;opacity:1}
-.menu-button,.mobile-nav{display:none}
-.arrow{display:inline-block;font-size:18px;line-height:1;font-weight:400}
-.label{font-size:11px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;font-family:Arial,system-ui,sans-serif}
-.label span{color:#9a9c9b}
-.hero{min-height:min(840px,calc(100svh - 88px));position:relative;border-bottom:1px solid var(--line);overflow:hidden}
-.hero-inner{min-height:min(840px,calc(100svh - 88px));position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);align-items:center;gap:25px}
-.hero-content{z-index:2;position:relative;padding:88px 0 122px}
-.hero .label{margin:0 0 46px;display:flex;align-items:center;gap:14px;color:#585d60}
-.hero .label::before{content:"";width:24px;height:1px;background:#696c70}
-.hero h1{font-size:clamp(63px,7.6vw,120px);letter-spacing:-.085em;line-height:1.19;font-weight:700;margin:0 0 40px;white-space:nowrap}
-.hero h1 .line{display:block}
-.hero h1 .thin{font-weight:400}
-.hero p.lead{color:#5b5e61;font-size:clamp(14px,1.4vw,17px);line-height:2.05;max-width:550px;margin:0}
-.hero-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:37px}
-.cta-black{background:#171819;color:#fff;border:1px solid #171819;border-radius:100px;padding:13px 21px;font-size:13px;display:inline-flex;align-items:center;gap:28px;transition:background .2s,transform .2s}
-.cta-black:hover{background:#3b3d3e;transform:translateY(-2px)}
-.cta-text{display:inline-flex;align-items:center;gap:16px;border-bottom:1px solid #222;padding:11px 0 8px;font-size:13px;transition:gap .2s}
-.cta-text:hover{gap:24px}
-.hero-art{height:600px;position:relative;isolation:isolate}
-.orbit{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:min(45vw,600px);height:min(45vw,600px);border-radius:50%;border:1px solid #d7dadf}
-.orbit:nth-child(2){width:min(36vw,490px);height:min(36vw,490px);border-color:#e8e8e7}
-.orbit::before{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:100px;background:#94989e}
-.orbit:nth-child(2)::before{top:auto;bottom:35px;left:12%;background:var(--blue)}
-.sphere{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:min(27vw,360px);height:min(27vw,360px);border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff 0,#eef4ff 12%,#c8d9ee 38%,#7796b3 65%,#283b4d 82%,#101b29 100%);box-shadow:inset -22px -23px 52px #07142333,0 45px 90px #36475c24;animation:float 9s ease-in-out infinite}
-.sphere::after{content:"";position:absolute;inset:12%;border-radius:50%;border:1px solid #fff7;transform:rotate(-25deg) scaleY(.46)}
-.sphere-mark{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:45%;opacity:.13;filter:grayscale(1);mix-blend-mode:multiply}
-.ellipse{position:absolute;left:50%;top:49%;height:38%;width:123%;border:1px solid #56718a70;border-radius:50%;transform:translate(-50%,-50%) rotate(-27deg);pointer-events:none}
-.hero-caption{position:absolute;bottom:34px;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#767a7b}
-.hero-caption span{font-family:Arial,system-ui,sans-serif;font-size:10px;letter-spacing:.16em}
-.scroll-indicator{display:flex;align-items:center;gap:15px}
-.scroll-indicator::before{content:"";display:block;width:38px;height:1px;background:#8f9394}
-.section{padding:132px 0}
-.section-top{display:flex;justify-content:space-between;gap:30px;align-items:start;margin-bottom:74px}
-.section-index{font-size:12px;font-family:Arial,system-ui,sans-serif;color:#777a7b;min-width:145px}
-.section-name{font-family:Arial,system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em}
-.view{background:#f4f4f1;border-bottom:1px solid #e2e2de}
-.view-layout{display:grid;grid-template-columns: 185px 1fr;gap:50px}
-.view-text h2{font-size:clamp(37px,5.15vw,77px);line-height:1.38;letter-spacing:-.075em;font-weight:600;margin:0 0 48px}
-.view-bottom{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:80px}
-.view-bottom p{color:#5f6264;max-width:515px;font-size:15px;line-height:2.3;margin:0}
-.view-micro{font-size:12px;color:#999e9d;text-transform:uppercase;letter-spacing:.2em;line-height:1.8}
-.research .section-top{margin-bottom:40px}
-.research h2,.areas h2{font-size:clamp(39px,5.5vw,77px);font-weight:650;letter-spacing:-.07em;line-height:1.24;margin:0}
-.section-intro{font-size:15px;color:#727577;max-width:600px;margin:28px 0 60px;line-height:2.15}
-.research-list{border-top:1px solid #bfc2c2}
-.research-row{display:grid;grid-template-columns:80px minmax(0,1.15fr) minmax(280px,.9fr) 120px;align-items:center;gap:30px;padding:33px 5px;border-bottom:1px solid #d2d4d3;transition:padding .3s,background .3s}
-.research-row:hover{background:#f0f2f3;padding-left:16px;padding-right:16px}
-.research-row .num{font-size:12px;color:#8c9091}
-.research-title{font-size:clamp(25px,3.3vw,47px);line-height:1.2;letter-spacing:-.055em;margin:0;font-weight:550}
-.research-description{font-size:13px;color:#737677;margin:0;line-height:1.9}
-.research-state{justify-self:end;font-size:11px;color:#888c8d;text-align:right}
-.research-state::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#3178e6;margin-right:9px;vertical-align:middle}
-.feature{background:#181a1d;color:#f5f6f5;position:relative;overflow:hidden}
-.feature .container{min-height:690px;display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center;position:relative}
-.feature .section-index{color:#93989c}
-.feature-info{padding:112px 0}
-.feature-info .label{color:#b9bfc4}
-.feature-title{font-size:clamp(67px,9vw,135px);font-weight:700;letter-spacing:-.095em;margin:12px 0 15px;line-height:1}
-.feature-description{font-size:clamp(22px,2.7vw,38px);line-height:1.5;letter-spacing:-.05em;font-weight:450;margin:0 0 24px}
-.feature-body{color:#aaafb4;max-width:440px;font-size:14px;line-height:2.1;margin:0 0 40px}
-.feature-link{display:inline-flex;align-items:center;gap:35px;border-bottom:1px solid #a2a6a9;padding-bottom:9px;font-size:13px;transition:gap .2s}
-.feature-link:hover{gap:48px}
-.feature-visual{align-self:stretch;display:flex;align-items:center;justify-content:center;position:relative}
-.feature-visual::before{content:"";position:absolute;width:740px;height:740px;border-radius:50%;background:radial-gradient(circle,#2f416072,transparent 65%);left:50%;top:53%;transform:translate(-50%,-50%)}
-.terminal{position:relative;width:480px;max-width:100%;background:#fdfdfc;color:#111a20;border-radius:17px;box-shadow:0 30px 95px #0009;overflow:hidden;transform:rotate(-4deg) translate(12px,20px);border:1px solid #ffffff50}
-.terminal-head{border-bottom:1px solid #e6e7e8;padding:20px 23px;display:flex;align-items:center;justify-content:space-between}
-.terminal-brand{font-size:25px;font-weight:760;letter-spacing:-.075em}
-.terminal-brand i{font-size:10px;letter-spacing:0;font-style:normal;color:#438de3;vertical-align:super;margin-left:3px}
-.terminal-dots{font-family:Arial;font-size:17px;color:#a8acb0}
-.terminal-body{padding:28px 28px 30px;min-height:290px}
-.chat-label{font-size:10px;color:#97a1aa;letter-spacing:.12em;margin:0 0 18px}
-.chat-question{background:#f0f2f4;margin-left:auto;max-width:80%;border-radius:16px 16px 4px 16px;padding:12px 18px;font-size:12px;line-height:1.8}
-.chat-answer{font-size:13px;line-height:1.9;margin-top:29px;max-width:90%;color:#333e4b}
-.chat-answer strong{display:block;font-size:12px;color:#1b6bd0;margin-bottom:10px}
-.chat-prompt{border:1px solid #e3e5e8;border-radius:13px;color:#adb5bc;font-size:11px;margin-top:42px;padding:13px 15px;display:flex;justify-content:space-between}
-.areas .section-top{margin-bottom:34px}
-.area-list{margin-top:70px;border-top:1px solid #c7c9c8}
-.area{display:grid;grid-template-columns:75px 1fr 1fr 35px;gap:25px;align-items:center;padding:48px 0;border-bottom:1px solid #d6d7d5}
-.area-n{font-family:Arial;font-size:12px;color:#777b7c}
-.area h3{font-size:clamp(28px,3.45vw,50px);line-height:1.25;letter-spacing:-.065em;font-weight:560;margin:0}
-.area p{font-size:14px;line-height:1.9;max-width:430px;color:#74787a;margin:0}
-.area .arrow{justify-self:end}
-.closing{border-top:1px solid #e2e4e3;background:#e9e9e5;min-height:520px;display:flex;align-items:center;text-align:center}
-.closing .container{padding-block:95px}
-.closing .label{color:#606465}
-.closing h2{font-size:clamp(45px,6.8vw,98px);font-weight:600;letter-spacing:-.08em;line-height:1.27;margin:32px 0 39px}
-.closing .cta-black{margin-inline:auto}
-.footer{background:#141517;color:#fff;padding:80px 0 30px}
-.footer-upper{display:grid;grid-template-columns:1.4fr .8fr .8fr .8fr;gap:54px}
-.footer-wordmark{filter:invert(1);width:146px;display:block}
-.footer-lead{color:#a9acad;font-size:13px;line-height:1.9;margin:28px 0 0}
-.footer-links h3{font-family:Arial,system-ui;font-size:12px;font-weight:600;margin:0 0 22px}
-.footer-links a{display:block;color:#b2b5b6;font-size:12px;line-height:2.5}
-.footer-links a:hover{color:#fff}
-.footer-bottom{border-top:1px solid #383a3d;margin-top:85px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;color:#999da0;font-family:Arial,system-ui;font-size:11px}
-.footer-bottom p{margin:0}
-@keyframes float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 16px))}}
-@media(max-width:1150px){.hero h1{font-size:clamp(53px,7.5vw,83px)}.hero-inner{grid-template-columns:1.2fr .8fr}.research-row{grid-template-columns:45px minmax(0,1fr) minmax(240px,.9fr) 90px}.view-layout{grid-template-columns:115px 1fr}.feature .container{gap:20px}.terminal{transform:rotate(-3deg) scale(.93)}}
-@media(max-width:780px){.container{width:calc(100% - 42px)}.site-head{height:72px}.logo img{width:106px}.nav{display:none}.menu-button{display:grid;place-items:center;appearance:none;border:1px solid #d7d8d8;background:transparent;color:#1b1c1d;border-radius:50%;width:43px;height:43px;padding:0}.menu-button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round}.mobile-nav{display:flex;position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--paper);padding:48px 24px;flex-direction:column;gap:18px;visibility:hidden;opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .2s,transform .2s,visibility .2s;overflow:auto;z-index:39}.mobile-nav.open{visibility:visible;opacity:1;transform:none;pointer-events:auto}.mobile-nav a{font-size:27px;letter-spacing:-.05em;border-bottom:1px solid var(--line);padding:13px 0}.hero,.hero-inner{min-height:auto}.hero-inner{display:flex;flex-direction:column;align-items:stretch}.hero-content{padding:90px 0 0}.hero h1{font-size:clamp(50px,8.4vw,70px)}.hero .label{margin-bottom:36px}.hero-art{height:380px;width:100%;flex:none}.orbit{width:390px;height:390px}.orbit:nth-child(2){width:315px;height:315px}.sphere{width:245px;height:245px}.hero-caption{position:relative;padding-bottom:22px}.section{padding:95px 0}.view-layout{grid-template-columns:1fr;gap:40px}.view-bottom{grid-template-columns:1fr 1fr;gap:22px}.research-row{grid-template-columns:40px 1fr 80px}.research-description{grid-column:2/4;grid-row:2}.research-state{grid-column:3;grid-row:1}.research-list .research-row{gap:10px 15px}.feature .container{min-height:0;grid-template-columns:1fr}.feature-info{padding:85px 0 0}.feature-visual{min-height:445px}.terminal{transform:rotate(-3deg) scale(.88)}.area{grid-template-columns:55px 1fr 26px;gap:12px}.area p{grid-column:2/3;grid-row:2}.area .arrow{grid-column:3;grid-row:1}.footer-upper{grid-template-columns:1.2fr 1fr 1fr}.footer-brand{grid-column:1/-1}}
-@media(max-width:480px){.container{width:calc(100% - 38px)}.hero-content{padding-top:80px}.hero h1{font-size:clamp(44px,11vw,57px);letter-spacing:-.082em;margin-bottom:28px}.hero p.lead{font-size:13px}.hero .label{font-size:9px;margin-bottom:28px}.hero-actions{gap:20px}.cta-black,.cta-text{font-size:12px}.hero-art{height:295px}.orbit{width:320px;height:320px}.orbit:nth-child(2){width:255px;height:255px}.sphere{width:210px;height:210px}.section{padding:75px 0}.section-top{margin-bottom:40px}.view-text h2{font-size:clamp(38px,9vw,54px)}.view-bottom{grid-template-columns:1fr;gap:20px}.view-micro{font-size:11px}.research h2,.areas h2{font-size:45px}.research-row{padding:23px 0}.research-title{font-size:26px}.research-description{font-size:12px}.research-state{font-size:9px}.feature-info{padding-top:72px}.feature-title{font-size:76px}.feature-description{font-size:27px}.feature-visual{min-height:350px}.terminal{transform:rotate(-3deg) scale(.72);flex-shrink:0;width:430px;max-width:none}.area{padding:30px 0;grid-template-columns:34px 1fr 25px}.area h3{font-size:32px}.area p{font-size:12px}.closing{min-height:410px}.closing h2{font-size:51px}.footer{padding-top:60px}.footer-upper{grid-template-columns:1fr 1fr;gap:33px 22px}.footer-brand{grid-column:1/-1}.footer-bottom{margin-top:65px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sphere{animation:none}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b11">
+  <meta name="description" content="ASRO — 明日を、創る。日本語AIの研究、創造を広げるプロダクト、そして信頼できる技術の開発に挑む。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="ASRO — 明日を、創る。">
+  <meta property="og:description" content="Technology for tomorrow. 日本語AIの研究、創造を広げるプロダクト、信頼できる技術。">
+  <title>ASRO — 明日を、創る。</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/asro-symbol.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./site.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
-<header class="site-head">
-  <div class="container site-head-inner">
-    <a class="logo" href="#top" aria-label="ASRO ホーム"><img src="./assets/asro-wordmark.svg" width="114" height="28" alt="ASRO"></a>
-    <nav class="nav" aria-label="メインナビゲーション"><a href="#view">Our View</a><a href="#research">Research</a><a href="#product">Kuup</a><a href="#areas">What We Do</a><a class="nav-cta" href="mailto:contact@asro.jp">Contact <span class="arrow" aria-hidden="true">↗</span></a></nav>
-    <button type="button" class="menu-button" id="menuButton" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<header class="head" id="header">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="ASRO ホームへ">
+      <img class="brand-symbol" src="./assets/asro-symbol.svg" alt="" width="27" height="27">
+      <img class="brand-word" src="./assets/asro-wordmark.svg" alt="" width="95" height="24">
+    </a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a href="#research">Research</a>
+      <a href="#product">Products</a>
+      <a href="#fields">Our Fields</a>
+      <a href="#about">About</a>
+      <a class="nav-action" href="mailto:contact@asro.jp">Contact <span class="arrow" aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="menu" id="menuToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="メニューを開く" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
-<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション" inert><a href="#view">Our View</a><a href="#research">Research</a><a href="#product">Kuup</a><a href="#areas">What We Do</a><a href="mailto:contact@asro.jp">Contact ↗</a></nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="スマートフォン用メニュー" inert>
+  <a href="#research">Research</a>
+  <a href="#product">Products</a>
+  <a href="#fields">Our Fields</a>
+  <a href="#about">About</a>
+  <a href="mailto:contact@asro.jp">Contact ↗</a>
+</nav>
 <main id="main">
-  <section class="hero" id="top" aria-labelledby="heroTitle">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <p class="label">A S R O <span>/</span> THE NEXT FRONTIER</p>
-        <h1 id="heroTitle"><span class="line">まだない、</span><span class="line"><span class="thin">明日</span>を創る。</span></h1>
-        <p class="lead">AIの可能性を探り、創造のかたちを広げ、安全な未来を築く。<br>ASROは、技術のその先にある世界を見つめている。</p>
-        <div class="hero-actions"><a href="#view" class="cta-black">私たちの考え <span class="arrow" aria-hidden="true">↗</span></a><a href="#research" class="cta-text">研究を見る <span class="arrow" aria-hidden="true">↗</span></a></div>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">ASRO / RESEARCH & TECHNOLOGY</p>
+        <h1 id="hero-title"><span>明日を、</span><span>創る。</span></h1>
+        <p class="lead">まだない可能性を、技術で切りひらく。<br>AIをもっと自由に。創造をもっと身近に。<br>ASROは、その先の未来に挑み続けます。</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#research">研究を見る <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#product">プロダクトへ <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
       </div>
-      <div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="orbit"></div><div class="sphere"><div class="ellipse"></div><img class="sphere-mark" src="./assets/asro-symbol.svg" alt=""></div></div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-glow"></div>
+        <div class="orbit"><span class="orbit-dot"></span></div>
+        <img class="hero-glyph" src="./assets/asro-symbol.svg" alt="" width="420" height="322">
+      </div>
     </div>
-    <div class="container hero-caption"><span>INDEPENDENT TECHNOLOGY PROJECT</span><span class="scroll-indicator">SCROLL TO EXPLORE</span></div>
+    <div class="wrap hero-bottom"><span>INDEPENDENT TECHNOLOGY PROJECT</span><span class="scroll-hint">SCROLL TO EXPLORE</span></div>
   </section>
-  <section class="view section" id="view" aria-labelledby="viewTitle">
-    <div class="container view-layout">
-      <div class="section-index">01 / OUR VIEW</div>
-      <div class="view-text">
-        <h2 id="viewTitle">技術は、<br>可能性をひらくためにある。</h2>
-        <div class="view-bottom">
-          <p>まだ誰も見たことのないものを、形にする。人にとってもっと自然で、もっと自由なテクノロジーをつくる。それがASROの出発点。</p>
-          <div class="view-micro">IDEAS INTO REALITY.<br>TECHNOLOGY FOR TOMORROW.</div>
+
+  <div class="strip" aria-label="ASROの技術領域">
+    <div class="wrap strip-inner"><b>OUR FOCUS</b><span>JAPANESE AI</span><span>INTELLIGENT AGENTS</span><span>CREATIVE TECHNOLOGY</span></div>
+  </div>
+
+  <section class="section light research" id="research" aria-labelledby="research-title">
+    <div class="wrap">
+      <div class="research-header reveal">
+        <div class="kicker">EXPLORATION <i>01 / RESEARCH</i></div>
+        <h2 class="section-title" id="research-title">知能の、その先へ。</h2>
+        <p class="section-lead">小さなモデルから、自律的に動くAIまで。技術の限界を決めつけず、日本語と知能の可能性を探究していく。</p>
+      </div>
+      <div class="research-grid">
+        <article class="research-card reveal">
+          <div class="research-meta"><span>LANGUAGE INTELLIGENCE</span><span class="status">研究開発中</span></div>
+          <div class="research-number" aria-hidden="true">01</div>
+          <h3>Asra Nova</h3>
+          <p>日本語を、もっと自然に。軽量モデルの能力と品質を追い求める日本語AI研究。</p>
+          <details><summary>研究について <span class="arrow" aria-hidden="true">→</span></summary><div class="research-detail">Sarashina系の軽量モデルを基盤に、日本語の指示理解や応答品質を検証。Asra Nova Picoなどの実験を進めています。</div></details>
+        </article>
+        <article class="research-card reveal">
+          <div class="research-meta"><span>AGENT SYSTEMS</span><span class="status">開発中</span></div>
+          <div class="research-number" aria-hidden="true">02</div>
+          <h3>TripleAS</h3>
+          <p>対話するだけでなく、考え、手順を組み立て、実行につなぐAIエージェント基盤。</p>
+          <details><summary>プロジェクトについて <span class="arrow" aria-hidden="true">→</span></summary><div class="research-detail">複数の工程を扱うAI Agent Systemとして構想・開発中。安全性と作業環境の分離を重視しています。</div></details>
+        </article>
+        <article class="research-card reveal">
+          <div class="research-meta"><span>HUMAN-CENTERED AI</span><span class="status">継続的な取り組み</span></div>
+          <div class="research-number" aria-hidden="true">03</div>
+          <h3>Accessible AI</h3>
+          <p>誰もが技術の恩恵を受けられるように。使いやすさと安全性を大切にするAIの探究。</p>
+          <details><summary>取り組みについて <span class="arrow" aria-hidden="true">→</span></summary><div class="research-detail">身近な端末や限られた計算資源でも扱えるAI、わかりやすい対話インターフェース、安心して使える機能の設計を目指します。</div></details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="product" aria-labelledby="product-title">
+    <div class="wrap feature-wrap">
+      <div class="feature-copy reveal">
+        <div class="kicker">MEET OUR PRODUCT <i>02 / KUUP</i></div>
+        <h2 id="product-title">Kuup<span style="color:#8da9ff">.</span></h2>
+        <p class="headline">思考と創造に、<br>新しい入り口を。</p>
+        <p>ひとつの質問から、アイデアを形にするところまで。Kuupは、AIとの対話をもっと自然で、もっと自由な体験にするためのプラットフォーム。</p>
+        <a class="btn btn-primary" href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuupを試す <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="product-visual reveal" aria-label="KuupのチャットUIのイメージ">
+        <div class="chat-window">
+          <div class="chat-head"><span class="chat-logo">Kuup<em>AI</em></span><span style="color:#9ca8bc;font-size:11px">UI CONCEPT</span></div>
+          <div class="chat-bubble">新しいアイデアを一緒に考えよう。</div>
+          <div class="chat-response">
+            <div class="assistant-tag">✳ KUUP</div>
+            もちろん。<br>ひとつの小さな発想から、<br>まだない可能性を広げていこう。
+          </div>
+          <div class="chat-input"><span>メッセージを入力...</span><span aria-hidden="true">↗</span></div>
         </div>
       </div>
     </div>
   </section>
-  <section class="research section" id="research" aria-labelledby="researchTitle">
-    <div class="container">
-      <div class="section-top"><div class="section-index">02 / EXPLORATION</div><span class="section-name">RESEARCH & DEVELOPMENT</span></div>
-      <h2 id="researchTitle">問い続けることから、<br>未来は始まる。</h2>
-      <p class="section-intro">日本語を深く理解するAIから、自律的に動くシステムまで。ASROの研究開発は、できることの境界を少しずつ広げていく。</p>
-      <div class="research-list" aria-label="研究・開発プロジェクト">
-        <article class="research-row"><span class="num">01</span><h3 class="research-title">Asra Nova</h3><p class="research-description">日本語での自然な対話と、軽量なモデルの可能性を追求するAI研究。</p><span class="research-state">研究開発中</span></article>
-        <article class="research-row"><span class="num">02</span><h3 class="research-title">TripleAS</h3><p class="research-description">AIが複数の工程を考え、実行につなげるエージェント基盤の開発。</p><span class="research-state">開発中</span></article>
-        <article class="research-row"><span class="num">03</span><h3 class="research-title">AI for Everyone</h3><p class="research-description">小さな環境でも使いやすいAIと、安心して利用できる設計の探究。</p><span class="research-state">取り組み</span></article>
+
+  <section class="section light areas" id="fields" aria-labelledby="fields-title">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div><div class="kicker">OUR WORK <i>03 / FIELDS</i></div><h2 class="section-title" id="fields-title">ひとつの未来を、<br>異なる技術から。</h2></div>
+        <div class="section-lead" style="max-width:280px;font-size:13px">AI・クリエイティブ・セキュリティ。つながる領域から、次の価値を生み出す。</div>
+      </div>
+      <div class="area-grid">
+        <div class="area-row reveal"><span class="index">01 /</span><h3>ASRO AI</h3><p>日本語AI、エージェント、日常の知的作業を支える技術の研究・開発。</p><span class="area-icon" aria-hidden="true">↗</span></div>
+        <div class="area-row reveal"><span class="index">02 /</span><h3>ASRO MOVIA</h3><p>映像やモーションの可能性を広げ、新しい表現をかたちにする。</p><span class="area-icon" aria-hidden="true">↗</span></div>
+        <div class="area-row reveal"><span class="index">03 /</span><h3>ASRO Security</h3><p>認証とセキュリティを通じて、安全で信頼できるデジタル体験へ。</p><span class="area-icon" aria-hidden="true">↗</span></div>
       </div>
     </div>
   </section>
-  <section class="feature" id="product" aria-labelledby="featureTitle">
-    <div class="container">
-      <div class="feature-info">
-        <div class="label">03 / OUR PRODUCT</div>
-        <h2 class="feature-title" id="featureTitle">Kuup<span style="color:#7ca9ff">.</span></h2>
-        <p class="feature-description">思考と、創造の<br>あたらしい入り口。</p>
-        <p class="feature-body">問いかけることから、何かをつくることまで。Kuupは、AIをもっと身近で、もっと自由な存在にしていくためのチャットサービス。</p>
-        <a class="feature-link" href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuupを使ってみる <span class="arrow" aria-hidden="true">↗</span></a>
+
+  <section class="section light about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-inner">
+      <div class="reveal">
+        <div class="kicker">OUR VIEW <i>04 / ABOUT</i></div>
+        <h2 id="about-title">未来を待つのではなく、<br>未来をつくる。</h2>
       </div>
-      <div class="feature-visual" aria-hidden="true">
-        <div class="terminal">
-          <div class="terminal-head"><div class="terminal-brand">Kuup<i>AI</i></div><div class="terminal-dots">•••</div></div>
-          <div class="terminal-body"><p class="chat-label">CREATE WITH INTELLIGENCE</p><div class="chat-question">新しいアイデアを一緒に考えよう。</div><div class="chat-answer"><strong>✳ KUUP</strong>もちろん。ひとつの小さな発想から、<br>新しい可能性を広げていこう。</div><div class="chat-prompt"><span>メッセージを入力...</span><span>↗</span></div></div>
-        </div>
+      <div class="about-text reveal">
+        <p>ASROという名前には、「明日を創る」という想いが込められています。</p>
+        <p>まだ存在しないものを想像し、試し、実際に使える技術にしていく。研究とプロダクトの間を行き来しながら、一歩ずつ前へ進みます。</p>
+        <img class="about-stamp" src="./assets/asro-symbol.svg" alt="ASROシンボル" width="82" height="63">
       </div>
     </div>
   </section>
-  <section class="areas section" id="areas" aria-labelledby="areasTitle">
-    <div class="container">
-      <div class="section-top"><div class="section-index">04 / OUR FIELDS</div><span class="section-name">WHAT WE BUILD</span></div>
-      <h2 id="areasTitle">ひとつの未来を、<br>異なる技術から。</h2>
-      <div class="area-list">
-        <div class="area"><span class="area-n">01</span><h3>ASRO AI</h3><p>対話、理解、自律的な実行。人とAIの新しい関係を探る。</p><span class="arrow" aria-hidden="true">↗</span></div>
-        <div class="area"><span class="area-n">02</span><h3>ASRO MOVIA</h3><p>動きと映像から、まだないクリエイティブ表現を生み出す。</p><span class="arrow" aria-hidden="true">↗</span></div>
-        <div class="area"><span class="area-n">03</span><h3>ASRO Security</h3><p>認証とセキュリティを通じて、信頼できるデジタル体験を支える。</p><span class="arrow" aria-hidden="true">↗</span></div>
-      </div>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="wrap closing-inner reveal">
+      <div class="kicker">THE NEXT FRONTIER STARTS HERE</div>
+      <h2 id="closing-title">その先の明日へ。</h2>
+      <a class="btn btn-primary" href="mailto:contact@asro.jp">ASROに連絡する <span class="arrow" aria-hidden="true">↗</span></a>
     </div>
   </section>
-  <section class="closing" aria-labelledby="closingTitle"><div class="container"><div class="label">BEYOND WHAT EXISTS TODAY</div><h2 id="closingTitle">次の一歩は、<br>ここから。</h2><a href="mailto:contact@asro.jp" class="cta-black">ASROへお問い合わせ <span class="arrow" aria-hidden="true">↗</span></a></div></section>
 </main>
 <footer class="footer">
-  <div class="container">
-    <div class="footer-upper">
-      <div class="footer-brand"><a href="#top" aria-label="ASRO トップへ戻る"><img class="footer-wordmark" src="./assets/asro-wordmark.svg" alt="ASRO" width="146" height="36"></a><p class="footer-lead">明日を、創る。<br>Technology for tomorrow.</p></div>
-      <div class="footer-links"><h3>Explore</h3><a href="#view">Our View</a><a href="#research">Research</a><a href="#areas">What We Do</a></div>
-      <div class="footer-links"><h3>Product</h3><a href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuup ↗</a><a href="#research">Asra Nova</a><a href="#research">TripleAS</a></div>
-      <div class="footer-links"><h3>Contact</h3><a href="mailto:contact@asro.jp">contact@asro.jp</a><a href="#top">Back to top ↑</a></div>
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="footer-logo" href="#top" aria-label="ASRO トップへ"><img src="./assets/asro-symbol.svg" alt="" width="32" height="32"><img src="./assets/asro-wordmark.svg" alt="" width="98" height="25"></a>
+        <p class="footer-desc">明日を、創る。<br>Technology for tomorrow.</p>
+      </div>
+      <div><h3>Discover</h3><a class="footer-item" href="#research">Research</a><a class="footer-item" href="#fields">Our Fields</a><a class="footer-item" href="#about">About ASRO</a></div>
+      <div><h3>Product</h3><a class="footer-item" href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuup ↗</a><a class="footer-item" href="#research">Asra Nova</a><a class="footer-item" href="#research">TripleAS</a></div>
+      <div><h3>Contact</h3><a class="footer-item" href="mailto:contact@asro.jp">contact@asro.jp</a><a class="footer-item" href="#top">Back to top ↑</a></div>
     </div>
-    <div class="footer-bottom"><p>© <span id="year">2026</span> ASRO. All rights reserved.</p><p>MADE TO EXPLORE THE NEXT FRONTIER.</p></div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> ASRO. All rights reserved.</span><span>MADE FOR WHAT COMES NEXT.</span></div>
   </div>
 </footer>
-<script>
-(()=>{'use strict';const button=document.getElementById('menuButton');const menu=document.getElementById('mobileNav');const year=document.getElementById('year');if(year)year.textContent=String(new Date().getFullYear());if(!button||!menu)return;
-const close=()=>{menu.classList.remove('open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','メニューを開く');menu.inert=true;document.body.classList.remove('menu-open')};
-button.addEventListener('click',()=>{const open=!menu.classList.contains('open');if(open){menu.inert=false;menu.classList.add('open');button.setAttribute('aria-expanded','true');button.setAttribute('aria-label','メニューを閉じる');document.body.classList.add('menu-open')}else close()});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});window.addEventListener('resize',()=>{if(window.innerWidth>780)close()},{passive:true});
-})();
-</script>
 </body>
 </html>
