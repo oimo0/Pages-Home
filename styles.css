@@ -284,8 +284,7 @@ section{position:relative}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
-  .section-pad{padding:84px 0}
-  .main-nav{
+  .section-pad{padding:84px 0}  .main-nav{
     position:fixed;inset:var(--header-h) 0 auto 0;background:#fff;border-bottom:1px solid var(--line);
     flex-direction:column;gap:0;padding:10px 24px 18px;margin:0;display:none;
   }
@@ -306,3 +305,11 @@ section{position:relative}
   .hero{padding-top:calc(var(--header-h) + 56px)}
   .hero-logo{height:42px}
 }
+
+/* ---------- Asra-Nova-Pico (model reveal) ---------- */
+.pico-img{width:min(540px,100%);border-radius:18px;margin-bottom:40px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+.pd-visual.dark{background:#000;border-color:#000;padding:0;overflow:hidden}
+.pd-visual.dark img{width:100%;max-height:none;border-radius:0}
+.logo-stack{background:#000;border-radius:28px;padding:54px 44px;display:grid;gap:48px;justify-items:center;margin-top:44px}
+.logo-stack img{width:min(660px,100%);border-radius:8px}
+.logo-stack img.badge{width:min(560px,100%)}
