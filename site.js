@@ -7,6 +7,8 @@
   var I18N = {
     ja: {
       "meta.title": "ASRO — カタチにすれば、意味がある。",
+      "xmas.badge": "🎄 Merry Christmas！クリスマス仕様でお届け中",
+      "xmas.foot": "🎄 ASROから、メリークリスマス。素敵なホリデーシーズンを。",
       "meta.desc": "ASROは、AIモデル「Asra」と、それを活かす製品をつくるテクノロジーブランドです。AIチャット「Kuup」をはじめ、学び、つくる楽しさをひらく製品を開発しています。",
       "nav.about": "ASROについて",
       "nav.products": "製品",
@@ -238,6 +240,8 @@
 
     en: {
       "meta.title": "ASRO — Give it form, and it gains meaning.",
+      "xmas.badge": "🎄 Merry Christmas! The site is dressed for the season",
+      "xmas.foot": "🎄 Merry Christmas from ASRO — have a wonderful holiday season.",
       "meta.desc": "ASRO is a technology brand building the AI model Asra and the products powered by it — starting with Kuup, an AI chat service designed to be helpful every day.",
       "nav.about": "About",
       "nav.products": "Products",
@@ -525,4 +529,38 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     targets.forEach(function (el) { io.observe(el); });
   }
+})();
+
+/* ===== Christmas season mode (Nov 1 – Dec 25) ===== */
+(function () {
+  var d = new Date();
+  var m = d.getMonth() + 1, day = d.getDate();
+  if (!(m === 11 || (m === 12 && day <= 25))) return;
+  document.documentElement.classList.add("xmas");
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var cv = document.createElement("canvas");
+  cv.id = "snow-canvas";
+  cv.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2000;";
+  document.body.appendChild(cv);
+  var ctx = cv.getContext("2d"), W, H, flakes = [];
+  function resize() {
+    W = cv.width = window.innerWidth; H = cv.height = window.innerHeight;
+    var n = Math.min(110, Math.floor(W / 14));
+    flakes = [];
+    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * W, y: Math.random() * H, r: 1 + Math.random() * 2.4, s: 0.4 + Math.random() * 0.9, p: Math.random() * Math.PI * 2, a: 0.35 + Math.random() * 0.45 });
+  }
+  resize(); window.addEventListener("resize", resize);
+  (function tick() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = "#b9c8d8";
+    for (var i = 0; i < flakes.length; i++) {
+      var f = flakes[i];
+      f.y += f.s; f.p += 0.008; f.x += Math.sin(f.p) * 0.5;
+      if (f.y > H + 4) { f.y = -4; f.x = Math.random() * W; }
+      ctx.globalAlpha = f.a;
+      ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(tick);
+  })();
 })();
