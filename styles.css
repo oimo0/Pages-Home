@@ -396,3 +396,76 @@ html.xmas .xmas-note { font-size: 16.5px; }
 }
 html.xmas .header-cta { background: linear-gradient(135deg, #c0392b, #a93226); box-shadow: 0 8px 22px rgba(192, 57, 43, .3); }
 html.xmas .header-cta:hover { opacity: 1; filter: brightness(1.08); }
+
+/* ===== Christmas ELEGANT layer (refined gold & evergreen) ===== */
+html.xmas body { background: #fdfaf2; }
+html.xmas .xmas-tree, html.xmas .xmas-gift, html.xmas .xmas-sleigh { display: none !important; }
+.xmas-bulb { width: 6px; height: 8px; animation-duration: 3.6s; }
+.xmas-bulb.mini { width: 4px; height: 5px; opacity: .55; }
+#xmas-lights2 { position: fixed; top: 14px; left: 0; right: 0; height: 14px; z-index: 2099; pointer-events: none; }
+@keyframes xmasBlink { from { opacity: .5; filter: brightness(.92); } to { opacity: 1; filter: brightness(1.12); } }
+.xmas-script { font-family: "Great Vibes", "Snell Roundhand", cursive; font-weight: 400; }
+html.xmas .xmas-badge {
+  background: #fffdf6; color: #6d5514; border: 1px solid rgba(176, 141, 79, .65);
+  box-shadow: 0 8px 24px rgba(176, 141, 79, .18); animation: none; letter-spacing: .08em; font-size: 13px;
+}
+html.xmas .xmas-badge .xmas-script {
+  font-size: 24px; line-height: 1; letter-spacing: 0;
+  background: linear-gradient(100deg, #9a7a34, #d9b264 45%, #9a7a34);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+html.xmas .xmas-count { font-size: 12px; color: #97753a; letter-spacing: .05em; }
+html.xmas .marquee {
+  transform: none; background: linear-gradient(180deg, #0e3524, #0b2c1e);
+  border-top: 1px solid rgba(198, 161, 91, .7); border-bottom: 1px solid rgba(198, 161, 91, .7);
+  box-shadow: 0 10px 30px rgba(11, 44, 30, .18);
+}
+html.xmas .sec-head { background-image: none; border-top: 1px solid rgba(176, 141, 79, .4); }
+html.xmas .eyebrow { color: #97753a; letter-spacing: .34em; }
+html.xmas .site-head { border-bottom: 1px solid rgba(176, 141, 79, .5); box-shadow: 0 1px 0 rgba(176, 141, 79, .14); background: rgba(253, 250, 242, .85); }
+html.xmas .btn-dark {
+  background: linear-gradient(135deg, #0d2f22, #155233); border: 1px solid rgba(198, 161, 91, .55);
+  box-shadow: 0 12px 30px rgba(13, 47, 34, .25);
+}
+html.xmas .btn-dark:hover { background: linear-gradient(135deg, #0a261b, #11452b); opacity: 1; }
+html.xmas .header-cta { background: linear-gradient(135deg, #0d2f22, #155233); border: 1px solid rgba(198, 161, 91, .6); box-shadow: 0 8px 22px rgba(13, 47, 34, .22); }
+html.xmas .chip { background: #fffdf6; border-color: rgba(176, 141, 79, .55); color: #6d5514; }
+html.xmas .fcard .num { color: #b08d4f; }
+html.xmas .news-card time { color: #97753a; }
+html.xmas ::selection { background: #f0e2bc; }
+html.xmas .pcard, html.xmas .fcard { border-color: rgba(176, 141, 79, .3); }
+html.xmas .pcard:hover, html.xmas .fcard:hover { border-color: rgba(176, 141, 79, .8); box-shadow: 0 20px 44px rgba(122, 95, 32, .14); }
+html.xmas .xmas-note { font-size: 14px; color: #6d5514; font-weight: 500; letter-spacing: .04em; }
+html.xmas .xmas-note .xmas-script {
+  display: block; font-size: 40px; line-height: 1.15; margin-bottom: 6px;
+  background: linear-gradient(100deg, #9a7a34, #dcbc72 45%, #9a7a34);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+html.xmas .pd-hero h1::after, html.xmas .cta h2::after {
+  content: ""; display: block; width: 76px; height: 2px; margin-top: 20px;
+  background: linear-gradient(90deg, #c6a15b, rgba(198, 161, 91, 0));
+}
+html.xmas .fact-table th { color: #97753a; }
+html.xmas .fact-table tr { border-color: rgba(176, 141, 79, .25); }
+html.xmas .asra-band { position: relative; }
+.xmas-sparkle {
+  position: absolute; color: #d9b264; pointer-events: none; z-index: 3; opacity: 0;
+  animation-name: xmasTwinkle; animation-timing-function: ease-in-out; animation-iteration-count: infinite;
+  text-shadow: 0 0 8px rgba(217, 178, 100, .8);
+}
+@keyframes xmasTwinkle { 0%, 100% { opacity: 0; transform: scale(.6) rotate(0deg); } 50% { opacity: .95; transform: scale(1) rotate(35deg); } }
+.xmas-baubles { display: none; }
+html.xmas .xmas-baubles { display: block; position: absolute; top: 0; right: 5.5%; z-index: 2; pointer-events: none; }
+html.xmas .xmas-baubles .bauble { display: inline-block; vertical-align: top; margin-left: 30px; transform-origin: top center; animation: xmasSwaySoft 6.5s ease-in-out infinite alternate; }
+html.xmas .xmas-baubles .bauble.b2 { animation-delay: -2.2s; animation-duration: 7.4s; }
+html.xmas .xmas-baubles .bauble.b3 { animation-delay: -4s; animation-duration: 5.8s; }
+@keyframes xmasSwaySoft { from { transform: rotate(1.6deg); } to { transform: rotate(-1.6deg); } }
+@media (max-width: 760px) {
+  html.xmas .xmas-baubles { right: 2%; transform: scale(.62); transform-origin: top right; }
+  html.xmas .xmas-note .xmas-script { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xmas-bulb, html.xmas .xmas-baubles .bauble, .xmas-sparkle { animation: none !important; }
+  .xmas-sparkle { opacity: .5; }
+}
+html.xmas .cta h2::after { width: 130px; margin-left: auto; margin-right: auto; background: linear-gradient(90deg, transparent, #c6a15b, transparent); }

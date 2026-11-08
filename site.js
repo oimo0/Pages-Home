@@ -7,8 +7,8 @@
   var I18N = {
     ja: {
       "meta.title": "ASRO — カタチにすれば、意味がある。",
-      "xmas.badge": "🎄 Merry Christmas！クリスマス仕様でお届け中",
-      "xmas.foot": "🎄✨ ASROから、メリークリスマス！素敵なホリデーシーズンを ✨🎄",
+      "xmas.badge": "クリスマス仕様でお届け中",
+      "xmas.foot": "ASROから、素敵なホリデーシーズンを。",
       "meta.desc": "ASROは、AIモデル「Asra」と、それを活かす製品をつくるテクノロジーブランドです。AIチャット「Kuup」をはじめ、学び、つくる楽しさをひらく製品を開発しています。",
       "nav.about": "ASROについて",
       "nav.products": "製品",
@@ -240,8 +240,8 @@
 
     en: {
       "meta.title": "ASRO — Give it form, and it gains meaning.",
-      "xmas.badge": "🎄 Merry Christmas! The site is dressed for the season",
-      "xmas.foot": "🎄✨ Merry Christmas from ASRO — have a wonderful holiday season ✨🎄",
+      "xmas.badge": "Dressed for the holiday season",
+      "xmas.foot": "With warm wishes for a wonderful holiday season, from ASRO.",
       "meta.desc": "ASRO is a technology brand building the AI model Asra and the products powered by it — starting with Kuup, an AI chat service designed to be helpful every day.",
       "nav.about": "About",
       "nav.products": "Products",
@@ -545,9 +545,9 @@
   var ctx = cv.getContext("2d"), W, H, flakes = [];
   function resize() {
     W = cv.width = window.innerWidth; H = cv.height = window.innerHeight;
-    var n = Math.min(200, Math.floor(W / 8));
+    var n = Math.min(180, Math.floor(W / 9));
     flakes = [];
-    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * W, y: Math.random() * H, r: 0.8 + Math.random() * 3.4, s: 0.4 + Math.random() * 1.1, p: Math.random() * Math.PI * 2, a: 0.35 + Math.random() * 0.5 });
+    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * W, y: Math.random() * H, r: 0.6 + Math.random() * 2.0, s: 0.3 + Math.random() * 0.75, p: Math.random() * Math.PI * 2, a: 0.3 + Math.random() * 0.45 });
   }
   resize(); window.addEventListener("resize", resize);
   (function tick() {
@@ -567,9 +567,9 @@
   /* String lights across the top */
   var strand = document.createElement("div");
   strand.id = "xmas-lights";
-  var colors = ["#e74c3c", "#f1c40f", "#2ecc71", "#3498db", "#ff7f50"];
+  var colors = ["#ffdf9e", "#f5c96b", "#ffe9b8", "#eec25f", "#fff3d0"];
   var sags = [0, 4, 7, 8, 7, 4, 0, -2];
-  var count = Math.max(10, Math.floor(window.innerWidth / 44));
+  var count = Math.max(14, Math.floor(window.innerWidth / 30));
   for (var j = 0; j < count; j++) {
     var b = document.createElement("span");
     b.className = "xmas-bulb";
@@ -577,15 +577,30 @@
     b.style.top = sags[j % sags.length] + "px";
     b.style.background = colors[j % colors.length];
     b.style.boxShadow = "0 0 14px 4px " + colors[j % colors.length];
-    b.style.animationDelay = (j * 0.18) + "s";
+    b.style.animationDelay = (j * 0.35) + "s";
     strand.appendChild(b);
   }
   document.body.appendChild(strand);
+  var strand2 = document.createElement("div");
+  strand2.id = "xmas-lights2";
+  var count2 = Math.max(8, Math.floor(window.innerWidth / 64));
+  for (var k = 0; k < count2; k++) {
+    var b2 = document.createElement("span");
+    b2.className = "xmas-bulb mini";
+    b2.style.left = (k * (100 / count2) + 3) + "%";
+    b2.style.top = (6 + sags[(k + 3) % sags.length]) + "px";
+    b2.style.background = colors[(k + 2) % colors.length];
+    b2.style.boxShadow = "0 0 10px 3px " + colors[(k + 2) % colors.length];
+    b2.style.animationDelay = (k * 0.5 + 0.4) + "s";
+    strand2.appendChild(b2);
+  }
+  document.body.appendChild(strand2);
 
   /* Countdown on the hero badge (top page only) */
   var badge = document.querySelector(".xmas-badge");
   if (badge) {
     var cspan = document.createElement("span");
+    cspan.className = "xmas-count";
     badge.appendChild(cspan);
     var updateCount = function () {
       if (!cspan.isConnected && badge.isConnected) badge.appendChild(cspan);
@@ -602,4 +617,31 @@
     updateCount();
     new MutationObserver(updateCount).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
+
+  /* Script font for the elegant greeting */
+  var fontLink = document.createElement("link");
+  fontLink.rel = "stylesheet";
+  fontLink.href = "https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap";
+  document.head.appendChild(fontLink);
+
+  /* Gold star favicon for the season */
+  var fav = document.querySelector("link[rel='icon']") || document.createElement("link");
+  fav.rel = "icon";
+  fav.href = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#c6a15b" d="M12 1.8l3.1 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.6 3.8L7 14.4 1.4 9.4l7.5-.7z"/></svg>');
+  document.head.appendChild(fav);
+
+  /* Delicate gold sparkles in the hero and the dark Asra band */
+  document.querySelectorAll(".hero, .asra-band").forEach(function (host) {
+    for (var s = 0; s < 16; s++) {
+      var sp = document.createElement("span");
+      sp.className = "xmas-sparkle";
+      sp.textContent = "✦";
+      sp.style.left = (4 + Math.random() * 92) + "%";
+      sp.style.top = (6 + Math.random() * 84) + "%";
+      sp.style.fontSize = (8 + Math.random() * 8) + "px";
+      sp.style.animationDelay = (Math.random() * 5) + "s";
+      sp.style.animationDuration = (3 + Math.random() * 3.5) + "s";
+      host.appendChild(sp);
+    }
+  });
 })();
