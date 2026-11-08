@@ -21,7 +21,7 @@ asro.jp のリニューアル版サイトを制作するためのリポジトリ
 | `products/cook.html` | Cook（一時停止中 / 2027-01-01 再開予定） |
 | `products/moot.html` | Moot（アニメーション制作 / MOVIA担当） |
 | `products/plat.html` | Plat（ASRO Account等の共有基盤） |
-| `products/asra.html` | Asra（自社AIモデル / 初モデル「Asra-Nova-Pico」公開） |
+| `products/asra.html` | Asra（自社AIモデル / 初モデル「Asra-Nova-Pico」：0.5B・Sarashinaベース・開発中） |
 | `products/security.html` | ASRO Security（セキュリティ部門） |
 | `styles.css` | 全ページ共通スタイル |
 | `site.js` | 言語切替（日英辞書）・アニメーション・ヘッダー制御 |
@@ -35,7 +35,7 @@ asro.jp のリニューアル版サイトを制作するためのリポジトリ
 ## ニュース（初期掲載）
 
 - 2026.11.08 — ASRO公式サイトをリニューアルしました
-- 2026.11.08 — Asra 初のモデル「Asra-Nova-Pico」を公開しました（開発：ASRO AI）
+- 2026.11.08 — Asra 初のモデル「Asra-Nova-Pico」を発表しました（0.5B / Sarashinaベース / 開発：ASRO AI、モデル自体は未公開）
 
 ## 外部リンク
 
