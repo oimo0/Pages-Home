@@ -2,176 +2,80 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090b11">
-  <meta name="description" content="ASRO — 明日を、創る。日本語AIの研究、創造を広げるプロダクト、そして信頼できる技術の開発に挑む。">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:title" content="ASRO — 明日を、創る。">
-  <meta property="og:description" content="Technology for tomorrow. 日本語AIの研究、創造を広げるプロダクト、信頼できる技術。">
-  <title>ASRO — 明日を、創る。</title>
-  <link rel="icon" type="image/svg+xml" href="./assets/asro-symbol.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f6f2">
+  <meta name="description" content="ASRO — まだない未来を、つくろう。AIの研究開発からクリエイティブ、セキュリティまで。技術で次の可能性をひらく。">
+  <meta property="og:type" content="website"><meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="ASRO — まだない未来を、つくろう。"><meta property="og:description" content="Research. Create. Imagine what's next.">
+  <link rel="icon" href="./assets/asro-symbol.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./site.js"></script>
+  <title>ASRO — まだない未来を、つくろう。</title>
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
-<header class="head" id="header">
-  <div class="wrap head-inner">
-    <a class="brand" href="#top" aria-label="ASRO ホームへ">
-      <img class="brand-symbol" src="./assets/asro-symbol.svg" alt="" width="27" height="27">
-      <img class="brand-word" src="./assets/asro-wordmark.svg" alt="" width="95" height="24">
-    </a>
-    <nav class="nav" aria-label="メインナビゲーション">
-      <a href="#research">Research</a>
-      <a href="#product">Products</a>
-      <a href="#fields">Our Fields</a>
-      <a href="#about">About</a>
-      <a class="nav-action" href="mailto:contact@asro.jp">Contact <span class="arrow" aria-hidden="true">↗</span></a>
-    </nav>
-    <button class="menu" id="menuToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="メニューを開く" type="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+<header class="site-header" id="header">
+  <div class="frame header-inner">
+    <a class="identity" href="#top" aria-label="ASRO ホームへ"><img src="./assets/asro-symbol.svg" alt="" width="33" height="27"><img src="./assets/asro-wordmark.svg" alt="ASRO" width="92" height="24"></a>
+    <nav class="nav-desktop" aria-label="メインナビゲーション"><a href="#vision">Vision</a><a href="#research">Research</a><a href="#kuup">Products</a><a href="#fields">What we do</a><a class="nav-contact" href="mailto:contact@asro.jp">Contact <span aria-hidden="true">↗</span></a></nav>
+    <button class="menu-toggle" id="menuToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="メニューを開く" type="button"><span></span><span></span></button>
   </div>
 </header>
-<nav class="mobile-nav" id="mobileNav" aria-label="スマートフォン用メニュー" inert>
-  <a href="#research">Research</a>
-  <a href="#product">Products</a>
-  <a href="#fields">Our Fields</a>
-  <a href="#about">About</a>
-  <a href="mailto:contact@asro.jp">Contact ↗</a>
-</nav>
+<nav class="nav-mobile" id="mobileNav" aria-label="モバイルナビゲーション" inert><a href="#vision">Vision</a><a href="#research">Research</a><a href="#kuup">Products</a><a href="#fields">What we do</a><a href="mailto:contact@asro.jp">Contact <span aria-hidden="true">↗</span></a></nav>
 <main id="main">
-  <section class="hero" id="top" aria-labelledby="hero-title">
-    <canvas id="sky" aria-hidden="true"></canvas>
-    <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow hero-eyebrow">ASRO / RESEARCH & TECHNOLOGY</p>
-        <h1 id="hero-title"><span>明日を、</span><span>創る。</span></h1>
-        <p class="lead">まだない可能性を、技術で切りひらく。<br>AIをもっと自由に。創造をもっと身近に。<br>ASROは、その先の未来に挑み続けます。</p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#research">研究を見る <span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="btn btn-ghost" href="#product">プロダクトへ <span class="arrow" aria-hidden="true">↗</span></a>
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+    <div class="frame hero-wrap">
+      <div class="hero-topline"><span>ASRO / TECHNOLOGY PROJECT</span><span>EST. IN JAPAN — 未来を、ここから。</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="hero-kicker"><span class="indicator"></span> REIMAGINING WHAT'S POSSIBLE</p>
+          <h1 id="heroTitle">未来は、<br><em>まだ</em>決まって<br>いない。</h1>
+          <div class="hero-after"><p>AIも、創造も、まだ進化の途中。<br>だからこそ、つくることに意味がある。<br>ASROは次の可能性を探り続ける。</p><a class="round-link" href="#vision" aria-label="ASROのビジョンを見る"><span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="hero-stage" aria-label="ASROのシンボルマーク">
+          <div class="stage-caption"><span>FIG. 01 — ASRO / ORIGIN</span><span>IDENTITY IN MOTION</span></div>
+          <div class="stage-center"><div class="stage-loop" aria-hidden="true"></div><img class="stage-logo" src="./assets/asro-symbol.svg" alt="ASROの公式シンボル" width="520" height="398"></div>
+          <div class="stage-footer"><span>DESIGNING THE NEXT STANDARD.</span><span>001 — ∞</span></div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-glow"></div>
-        <div class="orbit"><span class="orbit-dot"></span></div>
-        <img class="hero-glyph" src="./assets/asro-symbol.svg" alt="" width="420" height="322">
-      </div>
+      <div class="hero-footnote"><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span>01 / IMAGINE WHAT'S NEXT</span></div>
     </div>
-    <div class="wrap hero-bottom"><span>INDEPENDENT TECHNOLOGY PROJECT</span><span class="scroll-hint">SCROLL TO EXPLORE</span></div>
   </section>
 
-  <div class="strip" aria-label="ASROの技術領域">
-    <div class="wrap strip-inner"><b>OUR FOCUS</b><span>JAPANESE AI</span><span>INTELLIGENT AGENTS</span><span>CREATIVE TECHNOLOGY</span></div>
-  </div>
+  <div class="ticker" aria-label="ASROのテーマ"><div class="ticker-track" aria-hidden="true"><span>RESEARCH <i>✳</i> CREATE <i>✳</i> EXPLORE <i>✳</i> MAKE TOMORROW <i>✳</i></span><span>RESEARCH <i>✳</i> CREATE <i>✳</i> EXPLORE <i>✳</i> MAKE TOMORROW <i>✳</i></span></div></div>
 
-  <section class="section light research" id="research" aria-labelledby="research-title">
-    <div class="wrap">
-      <div class="research-header reveal">
-        <div class="kicker">EXPLORATION <i>01 / RESEARCH</i></div>
-        <h2 class="section-title" id="research-title">知能の、その先へ。</h2>
-        <p class="section-lead">小さなモデルから、自律的に動くAIまで。技術の限界を決めつけず、日本語と知能の可能性を探究していく。</p>
-      </div>
-      <div class="research-grid">
-        <article class="research-card reveal">
-          <div class="research-meta"><span>LANGUAGE INTELLIGENCE</span><span class="status">研究開発中</span></div>
-          <div class="research-number" aria-hidden="true">01</div>
-          <h3>Asra Nova</h3>
-          <p>日本語を、もっと自然に。軽量モデルの能力と品質を追い求める日本語AI研究。</p>
-          <details><summary>研究について <span class="arrow" aria-hidden="true">→</span></summary><div class="research-detail">Sarashina系の軽量モデルを基盤に、日本語の指示理解や応答品質を検証。Asra Nova Picoなどの実験を進めています。</div></details>
-        </article>
-        <article class="research-card reveal">
-          <div class="research-meta"><span>AGENT SYSTEMS</span><span class="status">開発中</span></div>
-          <div class="research-number" aria-hidden="true">02</div>
-          <h3>TripleAS</h3>
-          <p>対話するだけでなく、考え、手順を組み立て、実行につなぐAIエージェント基盤。</p>
-          <details><summary>プロジェクトについて <span class="arrow" aria-hidden="true">→</span></summary><div class="research-detail">複数の工程を扱うAI Agent Systemとして構想・開発中。安全性と作業環境の分離を重視しています。</div></details>
-        </article>
-        <article class="research-card reveal">
-          <div class="research-meta"><span>HUMAN-CENTERED AI</span><span class="status">継続的な取り組み</span></div>
-          <div class="research-number" aria-hidden="true">03</div>
-          <h3>Accessible AI</h3>
-          <p>誰もが技術の恩恵を受けられるように。使いやすさと安全性を大切にするAIの探究。</p>
-          <details><summary>取り組みについて <span class="arrow" aria-hidden="true">→</span></summary><div class="research-detail">身近な端末や限られた計算資源でも扱えるAI、わかりやすい対話インターフェース、安心して使える機能の設計を目指します。</div></details>
-        </article>
+  <section class="vision section" id="vision" aria-labelledby="visionTitle">
+    <div class="frame">
+      <div class="section-meta"><span>01 / OUR PERSPECTIVE</span><span>NOT AN ENDPOINT. A BEGINNING.</span></div>
+      <div class="vision-grid"><div class="vision-mark"><img src="./assets/asro-symbol.svg" alt="" aria-hidden="true" width="65" height="50"><span>THINK BEYOND<br>THE ORDINARY.</span></div>
+      <div class="vision-content"><h2 id="visionTitle" class="reveal">次の当たり前は、<br><span>まだないところ</span>から。</h2><div class="vision-text reveal"><p>未来がどうなるかを待つより、自分たちで可能性を試したい。</p><p>日本語AIの研究から、日々使えるプロダクトまで。小さな実験を積み重ね、まだ見たことのない体験をつくっていく。</p></div></div></div>
+    </div>
+  </section>
+
+  <section class="research section" id="research" aria-labelledby="researchTitle">
+    <div class="frame"><div class="section-meta"><span>02 / THE LAB</span><span>IDEAS IN PROGRESS</span></div>
+      <div class="research-head"><h2 class="section-heading reveal" id="researchTitle">好奇心に、<br>終わりはない<span class="blue-dot">.</span></h2><p class="reveal">技術は、試してこそ前へ進む。<br>ASROが取り組んでいる研究と開発。</p></div>
+      <div class="project-list">
+        <details class="project reveal"><summary><span class="project-n">01</span><span class="project-main"><small>LANGUAGE INTELLIGENCE</small><strong>Asra Nova</strong></span><span class="project-brief">軽量モデルから、日本語AIの可能性を広げる。</span><span class="project-action" aria-hidden="true">↗</span></summary><div class="project-expanded"><p>日本語の自然な応答、指示への忠実さ、そして限られた計算資源でも使える知能を追求。Asra Nova Picoなどの実験を重ねている。</p><span>STATUS — RESEARCH & EXPERIMENTS</span></div></details>
+        <details class="project reveal"><summary><span class="project-n">02</span><span class="project-main"><small>AGENT SYSTEMS</small><strong>TripleAS</strong></span><span class="project-brief">対話の先にある、「実行できるAI」へ。</span><span class="project-action" aria-hidden="true">↗</span></summary><div class="project-expanded"><p>AI Agent Systemとして、考える・計画する・実行する工程をつなぐ。独立した作業環境と、安全な実行のあり方を探求している。</p><span>STATUS — IN DEVELOPMENT</span></div></details>
+        <details class="project reveal"><summary><span class="project-n">03</span><span class="project-main"><small>OPEN POSSIBILITIES</small><strong>Accessible AI</strong></span><span class="project-brief">より多くの人が、より自然にAIを使えるように。</span><span class="project-action" aria-hidden="true">↗</span></summary><div class="project-expanded"><p>使いやすいインターフェース、軽量な推論、安全性への配慮。研究と実際の利用体験を行き来しながら改善を続ける。</p><span>STATUS — ONGOING EXPLORATION</span></div></details>
       </div>
     </div>
   </section>
 
-  <section class="feature" id="product" aria-labelledby="product-title">
-    <div class="wrap feature-wrap">
-      <div class="feature-copy reveal">
-        <div class="kicker">MEET OUR PRODUCT <i>02 / KUUP</i></div>
-        <h2 id="product-title">Kuup<span style="color:#8da9ff">.</span></h2>
-        <p class="headline">思考と創造に、<br>新しい入り口を。</p>
-        <p>ひとつの質問から、アイデアを形にするところまで。Kuupは、AIとの対話をもっと自然で、もっと自由な体験にするためのプラットフォーム。</p>
-        <a class="btn btn-primary" href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuupを試す <span class="arrow" aria-hidden="true">↗</span></a>
-      </div>
-      <div class="product-visual reveal" aria-label="KuupのチャットUIのイメージ">
-        <div class="chat-window">
-          <div class="chat-head"><span class="chat-logo">Kuup<em>AI</em></span><span style="color:#9ca8bc;font-size:11px">UI CONCEPT</span></div>
-          <div class="chat-bubble">新しいアイデアを一緒に考えよう。</div>
-          <div class="chat-response">
-            <div class="assistant-tag">✳ KUUP</div>
-            もちろん。<br>ひとつの小さな発想から、<br>まだない可能性を広げていこう。
-          </div>
-          <div class="chat-input"><span>メッセージを入力...</span><span aria-hidden="true">↗</span></div>
-        </div>
-      </div>
+  <section class="kuup" id="kuup" aria-labelledby="kuupTitle">
+    <div class="frame"><div class="section-meta kuup-meta"><span>03 / MADE TO BE USED</span><span>INTRODUCING KUUP</span></div>
+      <div class="kuup-layout"><div class="kuup-copy reveal"><p class="small-caps">YOUR IDEAS. IN MOTION.</p><h2 id="kuupTitle">Kuup<span>.</span></h2><h3>考えることが、<br>もっと自由になる。</h3><p>思いついたことを、すぐに話せる。質問から創作まで、AIと一緒に可能性を広げるチャットプラットフォーム。</p><a class="kuup-link" href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuupを開く <span aria-hidden="true">↗</span></a></div>
+      <div class="kuup-visual reveal"><div class="app-window"><div class="app-top"><div class="app-brand">Kuup<sup>AI</sup></div><div class="app-ellipsis" aria-hidden="true">•••</div></div><div class="app-screen"><div class="sample-kicker">A NEW WAY TO THINK</div><div class="app-message">新しいアイデアを、一緒に考えよう。</div><div class="app-answer"><span class="app-star">✳</span><p>もちろん。<br>ここから新しい可能性を<br>広げていこう。</p></div><div class="app-field"><span>メッセージを入力...</span><b aria-hidden="true">↑</b></div></div></div><div class="visual-caption">CONCEPT PREVIEW / NOT A LIVE SCREENSHOT</div></div></div>
     </div>
   </section>
 
-  <section class="section light areas" id="fields" aria-labelledby="fields-title">
-    <div class="wrap">
-      <div class="section-top reveal">
-        <div><div class="kicker">OUR WORK <i>03 / FIELDS</i></div><h2 class="section-title" id="fields-title">ひとつの未来を、<br>異なる技術から。</h2></div>
-        <div class="section-lead" style="max-width:280px;font-size:13px">AI・クリエイティブ・セキュリティ。つながる領域から、次の価値を生み出す。</div>
-      </div>
-      <div class="area-grid">
-        <div class="area-row reveal"><span class="index">01 /</span><h3>ASRO AI</h3><p>日本語AI、エージェント、日常の知的作業を支える技術の研究・開発。</p><span class="area-icon" aria-hidden="true">↗</span></div>
-        <div class="area-row reveal"><span class="index">02 /</span><h3>ASRO MOVIA</h3><p>映像やモーションの可能性を広げ、新しい表現をかたちにする。</p><span class="area-icon" aria-hidden="true">↗</span></div>
-        <div class="area-row reveal"><span class="index">03 /</span><h3>ASRO Security</h3><p>認証とセキュリティを通じて、安全で信頼できるデジタル体験へ。</p><span class="area-icon" aria-hidden="true">↗</span></div>
-      </div>
-    </div>
-  </section>
+  <section class="fields section" id="fields" aria-labelledby="fieldsTitle"><div class="frame"><div class="section-meta"><span>04 / WHAT WE DO</span><span>THREE DIRECTIONS, ONE VISION</span></div><div class="fields-head"><h2 class="section-heading reveal" id="fieldsTitle">未来へのアプローチは、<br>ひとつじゃない。</h2><p class="reveal">異なる技術が交わる場所に、新しい可能性が生まれる。</p></div>
+    <div class="fields-list"><div class="field reveal"><span class="field-number">A — 01</span><div><h3>ASRO AI</h3><p>知能の可能性を広げる、AIとエージェントの研究開発。</p></div><span class="field-symbol" aria-hidden="true">↗</span></div><div class="field reveal"><span class="field-number">M — 02</span><div><h3>ASRO MOVIA</h3><p>映像、モーション、新しいクリエイティブ表現への挑戦。</p></div><span class="field-symbol" aria-hidden="true">↗</span></div><div class="field reveal"><span class="field-number">S — 03</span><div><h3>ASRO Security</h3><p>安心して技術に触れられる、信頼と安全の基盤。</p></div><span class="field-symbol" aria-hidden="true">↗</span></div></div>
+  </div></section>
 
-  <section class="section light about" id="about" aria-labelledby="about-title">
-    <div class="wrap about-inner">
-      <div class="reveal">
-        <div class="kicker">OUR VIEW <i>04 / ABOUT</i></div>
-        <h2 id="about-title">未来を待つのではなく、<br>未来をつくる。</h2>
-      </div>
-      <div class="about-text reveal">
-        <p>ASROという名前には、「明日を創る」という想いが込められています。</p>
-        <p>まだ存在しないものを想像し、試し、実際に使える技術にしていく。研究とプロダクトの間を行き来しながら、一歩ずつ前へ進みます。</p>
-        <img class="about-stamp" src="./assets/asro-symbol.svg" alt="ASROシンボル" width="82" height="63">
-      </div>
-    </div>
-  </section>
-
-  <section class="closing" aria-labelledby="closing-title">
-    <div class="wrap closing-inner reveal">
-      <div class="kicker">THE NEXT FRONTIER STARTS HERE</div>
-      <h2 id="closing-title">その先の明日へ。</h2>
-      <a class="btn btn-primary" href="mailto:contact@asro.jp">ASROに連絡する <span class="arrow" aria-hidden="true">↗</span></a>
-    </div>
-  </section>
+  <section class="endcap" id="contact"><div class="frame endcap-inner"><p class="eyebrow">THE FUTURE IS STILL OPEN</p><h2>じゃあ、<br><em>次は何をつくろう。</em></h2><div class="endcap-bottom"><p>思いついたアイデアが、次の未来を変えるかもしれない。</p><a href="mailto:contact@asro.jp" class="endcap-contact">Get in touch <span aria-hidden="true">↗</span></a></div><img class="endcap-mark" src="./assets/asro-symbol.svg" alt="" aria-hidden="true"></div></section>
 </main>
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <a class="footer-logo" href="#top" aria-label="ASRO トップへ"><img src="./assets/asro-symbol.svg" alt="" width="32" height="32"><img src="./assets/asro-wordmark.svg" alt="" width="98" height="25"></a>
-        <p class="footer-desc">明日を、創る。<br>Technology for tomorrow.</p>
-      </div>
-      <div><h3>Discover</h3><a class="footer-item" href="#research">Research</a><a class="footer-item" href="#fields">Our Fields</a><a class="footer-item" href="#about">About ASRO</a></div>
-      <div><h3>Product</h3><a class="footer-item" href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuup ↗</a><a class="footer-item" href="#research">Asra Nova</a><a class="footer-item" href="#research">TripleAS</a></div>
-      <div><h3>Contact</h3><a class="footer-item" href="mailto:contact@asro.jp">contact@asro.jp</a><a class="footer-item" href="#top">Back to top ↑</a></div>
-    </div>
-    <div class="footer-bottom"><span>© <span id="year">2026</span> ASRO. All rights reserved.</span><span>MADE FOR WHAT COMES NEXT.</span></div>
-  </div>
-</footer>
+<footer class="footer"><div class="frame"><div class="footer-grid"><div class="footer-brand"><a class="identity" href="#top" aria-label="ASRO トップへ"><img src="./assets/asro-symbol.svg" alt="" width="31" height="26"><img src="./assets/asro-wordmark.svg" alt="ASRO" width="93" height="24"></a><p>明日を、創る。<br>Technology for what comes next.</p></div><div><strong>EXPLORE</strong><a href="#vision">Vision</a><a href="#research">Research</a><a href="#fields">What we do</a></div><div><strong>PRODUCT</strong><a href="https://asro.jp/AI/kuup/" target="_blank" rel="noopener noreferrer">Kuup ↗</a><a href="#research">Asra Nova</a><a href="#research">TripleAS</a></div><div><strong>CONTACT</strong><a href="mailto:contact@asro.jp">contact@asro.jp</a><a href="#top">Back to top ↑</a></div></div><div class="footer-end"><span>© <span id="year">2026</span> ASRO. All rights reserved.</span><span>IMAGINED & BUILT FOR TOMORROW.</span></div></div></footer>
 </body>
 </html>
