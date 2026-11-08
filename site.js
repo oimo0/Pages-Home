@@ -45,7 +45,7 @@
       "hero.meta.3": "自社開発・運営",
 
       "about.eyebrow": "About ASRO",
-      "about.big": "まだない明日を、つくる。",
+      "about.big": "作ったもん勝ちだ。",
       "about.p1": "ASROは、AI、ソフトウェア、そしてそれらを支えるインフラまでを一貫して手がけるテクノロジーブランドです。自社開発のAIモデル「Asra」をはじめ、使う人の毎日に届く製品を、ひとつずつカタチにしてお届けします。",
       "about.p2": "旧名はSORA CLOUD。2026年8月、ASROへと生まれ変わりました。名前は「そら」のアナグラムであり、「明日」への一歩でもあります。",
       "about.p3": "大げさな数字は掲げません。つくったものを、ひとつずつ、確かなカタチにしていく。それがASROのやり方です。",
@@ -279,7 +279,7 @@
       "hero.meta.3": "Built & run in-house",
 
       "about.eyebrow": "About ASRO",
-      "about.big": "Building a tomorrow that doesn't exist yet.",
+      "about.big": "Whoever makes it wins.",
       "about.p1": "ASRO is a technology brand working across AI, software, and the infrastructure that supports them. From Asra, our own AI model, to products for everyday life — we shape each idea into a form anyone can use.",
       "about.p2": "Formerly known as SORA CLOUD, the brand became ASRO in August 2026. The name is an anagram of \"sora\" — and a step toward tomorrow (\"asu\" in Japanese).",
       "about.p3": "We don't lead with big numbers. We build things, one at a time, and give each of them a solid form. That's the ASRO way.",
