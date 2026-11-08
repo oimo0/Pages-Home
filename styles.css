@@ -330,11 +330,69 @@ html.xmas .xmas-note {
 html.xmas .eyebrow { color: #0f5132; }
 html.xmas .btn-dark { background: linear-gradient(135deg, #0f5132, #177a4c); box-shadow: 0 10px 28px rgba(15, 81, 50, .28); }
 html.xmas .btn-dark:hover { opacity: 1; background: linear-gradient(135deg, #0c4229, #126b3f); }
-html.xmas .hero::before { background: radial-gradient(closest-side, rgba(23, 122, 76, .20), transparent 70%); }
-html.xmas .hero::after { background: radial-gradient(closest-side, rgba(192, 57, 43, .15), transparent 70%); }
+html.xmas .hero { position: relative; }
+html.xmas .hero-bg::before { background: radial-gradient(circle at center, rgba(23, 122, 76, .20), rgba(23, 122, 76, 0) 62%); }
+html.xmas .hero-bg::after { background: radial-gradient(circle at center, rgba(192, 57, 43, .16), rgba(192, 57, 43, 0) 62%); }
 html.xmas .chip { border-color: rgba(15, 81, 50, .4); color: #0f5132; }
 html.xmas .fcard .num { color: #c0392b; }
 html.xmas .news-card time { color: #c0392b; }
 html.xmas ::selection { background: #f6dcd8; }
 html.xmas .site-head { border-bottom-color: rgba(15, 81, 50, .16); }
 html.xmas .pd-back:hover { color: #0f5132; }
+
+/* ===== Christmas MAX (extra festive layer) ===== */
+#xmas-lights { position: fixed; top: 0; left: 0; right: 0; height: 18px; z-index: 2100; pointer-events: none; }
+.xmas-bulb {
+  position: absolute; width: 9px; height: 12px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: xmasBlink 1.6s ease-in-out infinite alternate;
+}
+@keyframes xmasBlink { from { opacity: .45; filter: brightness(.8); } to { opacity: 1; filter: brightness(1.25); } }
+.xmas-tree, .xmas-gift, .xmas-sleigh { display: none; }
+html.xmas .xmas-tree {
+  display: block; position: absolute; right: 5%; bottom: 9%; font-size: 128px; line-height: 1;
+  filter: drop-shadow(0 18px 24px rgba(15, 81, 50, .35)); animation: xmasSway 5s ease-in-out infinite; z-index: 2;
+}
+html.xmas .xmas-gift {
+  display: block; position: absolute; left: 4%; bottom: 7%; font-size: 54px; line-height: 1;
+  animation: xmasBounce 3.2s ease-in-out infinite; z-index: 2;
+}
+html.xmas .xmas-sleigh {
+  display: block; position: absolute; top: 11%; left: 0; font-size: 42px; line-height: 1; white-space: nowrap;
+  animation: xmasFly 30s linear infinite; z-index: 2; opacity: .95;
+}
+@keyframes xmasSway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+@keyframes xmasBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes xmasFly { 0% { transform: translateX(-15vw); } 100% { transform: translateX(115vw); } }
+html.xmas .xmas-badge {
+  background: linear-gradient(90deg, #c0392b, #0f5132); color: #fff; border: none;
+  box-shadow: 0 10px 26px rgba(192, 57, 43, .3); animation: xmasPulse 2.2s ease-in-out infinite;
+}
+@keyframes xmasPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+html.xmas .marquee { background: #0f5132; transform: rotate(-1.1deg) scale(1.02); box-shadow: 0 14px 34px rgba(15, 81, 50, .25); }
+html.xmas .marquee-track span { color: #fff; }
+html.xmas .sec-head {
+  padding-top: 30px;
+  background-image:
+    radial-gradient(circle at 8px 8px, #c0392b 3.5px, transparent 4.5px),
+    radial-gradient(circle at 26px 8px, #c9a227 3.5px, transparent 4.5px),
+    radial-gradient(circle at 44px 8px, #177a4c 3.5px, transparent 4.5px);
+  background-size: 54px 16px; background-repeat: repeat-x; background-position: top left;
+}
+html.xmas .asra-band {
+  border-top: 2px solid rgba(201, 162, 39, .65); border-bottom: 2px solid rgba(201, 162, 39, .65);
+  background-image:
+    radial-gradient(2px 2px at 12% 22%, rgba(255, 220, 130, .95), transparent),
+    radial-gradient(1.6px 1.6px at 32% 68%, rgba(255, 255, 255, .85), transparent),
+    radial-gradient(2.2px 2.2px at 55% 18%, rgba(255, 220, 130, .8), transparent),
+    radial-gradient(1.6px 1.6px at 74% 55%, rgba(255, 255, 255, .8), transparent),
+    radial-gradient(2px 2px at 88% 30%, rgba(255, 220, 130, .9), transparent);
+}
+html.xmas .fcard:hover { border-color: rgba(201, 162, 39, .75); box-shadow: 0 18px 42px rgba(192, 57, 43, .16); }
+html.xmas .xmas-note { font-size: 16.5px; }
+@media (max-width: 760px) {
+  html.xmas .xmas-tree { font-size: 74px; right: 2%; bottom: 5%; }
+  html.xmas .xmas-gift { font-size: 38px; }
+  html.xmas .xmas-sleigh { font-size: 30px; }
+}
+html.xmas .header-cta { background: linear-gradient(135deg, #c0392b, #a93226); box-shadow: 0 8px 22px rgba(192, 57, 43, .3); }
+html.xmas .header-cta:hover { opacity: 1; filter: brightness(1.08); }

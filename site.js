@@ -8,7 +8,7 @@
     ja: {
       "meta.title": "ASRO — カタチにすれば、意味がある。",
       "xmas.badge": "🎄 Merry Christmas！クリスマス仕様でお届け中",
-      "xmas.foot": "🎄 ASROから、メリークリスマス。素敵なホリデーシーズンを。",
+      "xmas.foot": "🎄✨ ASROから、メリークリスマス！素敵なホリデーシーズンを ✨🎄",
       "meta.desc": "ASROは、AIモデル「Asra」と、それを活かす製品をつくるテクノロジーブランドです。AIチャット「Kuup」をはじめ、学び、つくる楽しさをひらく製品を開発しています。",
       "nav.about": "ASROについて",
       "nav.products": "製品",
@@ -241,7 +241,7 @@
     en: {
       "meta.title": "ASRO — Give it form, and it gains meaning.",
       "xmas.badge": "🎄 Merry Christmas! The site is dressed for the season",
-      "xmas.foot": "🎄 Merry Christmas from ASRO — have a wonderful holiday season.",
+      "xmas.foot": "🎄✨ Merry Christmas from ASRO — have a wonderful holiday season ✨🎄",
       "meta.desc": "ASRO is a technology brand building the AI model Asra and the products powered by it — starting with Kuup, an AI chat service designed to be helpful every day.",
       "nav.about": "About",
       "nav.products": "Products",
@@ -545,9 +545,9 @@
   var ctx = cv.getContext("2d"), W, H, flakes = [];
   function resize() {
     W = cv.width = window.innerWidth; H = cv.height = window.innerHeight;
-    var n = Math.min(110, Math.floor(W / 14));
+    var n = Math.min(200, Math.floor(W / 8));
     flakes = [];
-    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * W, y: Math.random() * H, r: 1 + Math.random() * 2.4, s: 0.4 + Math.random() * 0.9, p: Math.random() * Math.PI * 2, a: 0.35 + Math.random() * 0.45 });
+    for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * W, y: Math.random() * H, r: 0.8 + Math.random() * 3.4, s: 0.4 + Math.random() * 1.1, p: Math.random() * Math.PI * 2, a: 0.35 + Math.random() * 0.5 });
   }
   resize(); window.addEventListener("resize", resize);
   (function tick() {
@@ -563,4 +563,43 @@
     ctx.globalAlpha = 1;
     requestAnimationFrame(tick);
   })();
+
+  /* String lights across the top */
+  var strand = document.createElement("div");
+  strand.id = "xmas-lights";
+  var colors = ["#e74c3c", "#f1c40f", "#2ecc71", "#3498db", "#ff7f50"];
+  var sags = [0, 4, 7, 8, 7, 4, 0, -2];
+  var count = Math.max(10, Math.floor(window.innerWidth / 44));
+  for (var j = 0; j < count; j++) {
+    var b = document.createElement("span");
+    b.className = "xmas-bulb";
+    b.style.left = (j * (100 / count) + 1) + "%";
+    b.style.top = sags[j % sags.length] + "px";
+    b.style.background = colors[j % colors.length];
+    b.style.boxShadow = "0 0 14px 4px " + colors[j % colors.length];
+    b.style.animationDelay = (j * 0.18) + "s";
+    strand.appendChild(b);
+  }
+  document.body.appendChild(strand);
+
+  /* Countdown on the hero badge (top page only) */
+  var badge = document.querySelector(".xmas-badge");
+  if (badge) {
+    var cspan = document.createElement("span");
+    badge.appendChild(cspan);
+    var updateCount = function () {
+      if (!cspan.isConnected && badge.isConnected) badge.appendChild(cspan);
+      var now = new Date();
+      var xmasDay = new Date(now.getFullYear(), 11, 25);
+      var ja = (localStorage.getItem("asro-lang") || "ja") === "ja";
+      if (now.getMonth() === 11 && now.getDate() === 25) {
+        cspan.textContent = ja ? "今日はクリスマス！" : "It's Christmas Day!";
+      } else if (now < xmasDay) {
+        var days = Math.ceil((xmasDay - now) / 86400000);
+        cspan.textContent = ja ? ("（クリスマスまであと" + days + "日）") : ("(" + days + " days to go)");
+      } else { cspan.textContent = ""; }
+    };
+    updateCount();
+    new MutationObserver(updateCount).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
 })();
