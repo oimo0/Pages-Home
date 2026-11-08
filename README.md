@@ -1,44 +1,44 @@
-# ASRO — Official Homepage
+# Pages-Home — ASRO 新公式サイト（制作置き場）
 
-ASROの公式サイト向けホームページ。過去のスタイルを取りやめ、白と黒を中心とする**タイポグラフィ主導のエディトリアルデザイン**として制作しました。
+asro.jp のリニューアル版サイトを制作するためのリポジトリです。
+完成後は、ここから本番サーバーへ配置して **asro.jp** で公開する想定です。
 
-## 方針
-- 「未来は、まだ決まっていない。」から始まる、ASROという技術プロジェクトそのものの紹介
-- ユーザーが提供した**ASROの正しい3パーツのシンボル**を使用（SchoolLinkのロゴは使用しない）
-- 白・黒・淡いラベンダーを中心とした落ち着いた配色
-- 研究（Asra Nova、TripleAS、Accessible AI）を展開できる一覧形式で紹介
-- 主力製品Kuupを独立した特集セクションで紹介
-- ASRO AI / MOVIA / Securityの事業領域を簡潔に整理
-- レスポンシブ対応・キーボード操作・動きを減らすOS設定に対応
-- 外部JS/CSSライブラリなし。ビルド不要
+## デザイン方針
+
+- OpenAI のような、明るく余白の大きいミニマルデザイン（白基調・モノクロ）
+- ヒーローコピー： **「カタチにすれば、意味がある。」**
+- 日本語 / 英語の切り替え（ヘッダーのボタン、選択はブラウザに保存）
+- スクロール連動の出現アニメーション、ヒーローのテキストアニメーション、ロゴのマーキーなど強めのモーション
+- 数値・実績の類は掲げない。ASRO は法人ではなくテクノロジーブランドとして表記
 
 ## 構成
-- `index.html`: セマンティックHTML
-- `styles.css`: レスポンシブデザインと軽いアニメーション
-- `site.js`: モバイルメニューとスクロール演出
-- `assets/asro-symbol.svg`: 正式シンボルを提供画像からトレースしたSVG
-- `assets/asro-wordmark.svg`: ASROワードマーク
 
-## ローカル表示
-```bash
-python3 -m http.server 8000
-```
-`http://localhost:8000` をブラウザで開く。
+| ファイル | 内容 |
+|---|---|
+| `index.html` | トップページ（About / 製品 / 部門 / Asra / ニュース / お問い合わせ） |
+| `products/kuup.html` | Kuup（主力・AIチャット） |
+| `products/schoollink.html` | SchoolLink（学級支援） |
+| `products/cook.html` | Cook（一時停止中 / 2027-01-01 再開予定） |
+| `products/moot.html` | Moot（アニメーション制作 / MOVIA担当） |
+| `products/plat.html` | Plat（ASRO Account等の共有基盤） |
+| `products/asra.html` | Asra（自社AIモデル / 初モデル誕生・詳細未公開） |
+| `products/security.html` | ASRO Security（セキュリティ部門） |
+| `styles.css` | 全ページ共通スタイル |
+| `site.js` | 言語切替（日英辞書）・アニメーション・ヘッダー制御 |
 
-## GitHub Pages
-Repository Settings → Pages → Deploy from a branch → `main` / `/(root)` → Save。
+## ロゴについて
 
-公開が完了したら、通常は `https://oimo0.github.io/Pages-Home/` で確認できます。Pagesの公開・DNS状態は別途確認が必要です。
+- リポジトリ直下の PNG が原本です。サイトからはそのまま参照しています（白背景のまま白い面に載せることで馴染ませています）。
+- 本番サーバー配置時には、透過・軽量化した版への差し替えが可能です（形は同一）。
+- 旧来の `assets/` フォルダ（SVG 2点）は旧サイトの残りで、新サイトでは未使用です。
 
-## 検証
-- ローカルHTML構造・リンク参照：PASS
-- JavaScript構文：PASS
-- Chromium相当（HTML/CSS/JSを埋め込んだオフラインプレビュー）でデスクトップ1440px、タブレット768px、スマホ390pxをチェック
-- 上記幅で横スクロールなし、JavaScript実行エラーなし、スマホメニューと研究詳細開閉の操作が成功
-- 公開URLからの実機テスト／Lighthouse測定は未実施
+## ニュース（初期掲載）
 
-## 注意
-- `asro.jp` の現在の本番サイトは変更していません
-- Kuupの会話画面は**説明用コンセプト**で、実際の現行UI画像ではありません
-- 会社としての登録形態や提供状況は断定しない
-- Moonshot AIはデザインの方向性を考える際の参考であり、画像やソース、文言はコピーしていません
+- 2026.11.08 — ASRO公式サイトをリニューアルしました
+- 2026.11.08 — Asra 初のモデルが誕生しました（モデル名・詳細は未公開）
+
+## 外部リンク
+
+- ステータス: https://status.asro.jp/
+- X: https://x.com/ASRO_jp
+- お問い合わせ: contact@asro.jp
