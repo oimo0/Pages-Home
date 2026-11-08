@@ -533,11 +533,20 @@
   }
 })();
 
+/* ASRO holiday state is assigned before the Christmas effect initializes. */
+window.ASROSeasonState = (function () {
+  var parts = {};
+  new Intl.DateTimeFormat("en-US", {timeZone:"Asia/Tokyo",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).forEach(function(p){if(p.type!=="literal")parts[p.type]=+p.value;});
+  var md = parts.month*100+parts.day;
+  if (md>=1101 && (md<1225 || (md===1225 && parts.hour<9))) return "xmas";
+  if ((md===1225 && parts.hour>=12) || md>1225 || md<102 || (md===102 && parts.hour<9)) return "newyear";
+  return "normal";
+})();
+
 /* ===== Christmas season mode (Nov 1 – Dec 25) ===== */
 (function () {
-  var d = new Date();
-  var m = d.getMonth() + 1, day = d.getDate();
-  if (!(m === 11 || (m === 12 && day <= 25))) return;
+  // JST-based seasonal guard (also handles Dec 25 morning cutoff).
+  if (window.ASROSeasonState !== "xmas") return;
   document.documentElement.classList.add("xmas");
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var cv = document.createElement("canvas");
@@ -646,4 +655,97 @@
       host.appendChild(sp);
     }
   });
+})();
+
+
+/* ===== Japan-time holiday scheduler: 2026/12/25 09:00, 12:00; 2027/01/02 09:00 =====
+   Recurs annually. Client clock is interpreted in Asia/Tokyo regardless of visitor timezone.
+   Date limits use [start, end); the Christmas-to-New-Year gap is intentionally neutral. */
+(function () {
+  "use strict";
+  function japanParts(date) {
+    var formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit",
+      day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    });
+    var o = {};
+    formatter.formatToParts(date).forEach(function (part) {
+      if (part.type !== "literal") o[part.type] = +part.value;
+    });
+    return o;
+  }
+  function season(date) {
+    var p = japanParts(date);
+    var md = p.month * 100 + p.day;
+    if (md >= 1101 && (md < 1225 || (md === 1225 && p.hour < 9))) return "xmas";
+    if ((md === 1225 && p.hour >= 12) || md > 1225 || md < 102 || (md === 102 && p.hour < 9)) return "newyear";
+    return "normal";
+  }
+  function currentLang() {
+    return document.documentElement.lang === "en" ? "en" : "ja";
+  }
+  var initial = season(new Date());
+  document.documentElement.classList.toggle("newyear", initial === "newyear");
+  if (initial === "newyear") {
+    var root = document.createElement("div");
+    root.className = "ny-scene";
+    root.setAttribute("aria-hidden", "true");
+    root.innerHTML =
+      '<div class="ny-rope"><span class="ny-rope-string"></span><span class="ny-shide">◆</span><span class="ny-knot">◉</span><span class="ny-shide">◆</span><span class="ny-rope-string"></span></div>' +
+      '<div class="ny-corner ny-left"><span class="ny-pine">🎍</span></div>' +
+      '<div class="ny-corner ny-right"><span class="ny-pine">🎍</span></div>';
+    document.body.appendChild(root);
+    var hero = document.querySelector(".hero-inner");
+    if (hero) {
+      var sunrise = document.createElement("div");
+      sunrise.className = "ny-sunrise";
+      sunrise.setAttribute("aria-hidden", "true");
+      sunrise.innerHTML = '<span class="ny-sun"></span><span class="ny-mountain"></span><span class="ny-horizon"></span>';
+      hero.insertBefore(sunrise, hero.firstChild);
+      var message = document.createElement("div");
+      message.className = "ny-greeting";
+      message.innerHTML = '<span class="ny-label">NEW YEAR · ASRO</span><strong class="ny-greet-main"></strong><span class="ny-greet-sub"></span>';
+      var logo = hero.querySelector(".hero-logo");
+      if (logo) logo.insertAdjacentElement("afterend", message);
+      else hero.insertBefore(message, hero.firstChild);
+      function translateGreeting() {
+        var ja = currentLang() === "ja";
+        message.querySelector(".ny-greet-main").textContent = ja ? "謹賀新年" : "Happy New Year";
+        message.querySelector(".ny-greet-sub").textContent = ja ? "新しい一年も、作ったもん勝ちだ。" : "A new year to make things happen.";
+      }
+      translateGreeting();
+      new MutationObserver(translateGreeting).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    }
+    var footer = document.querySelector("footer");
+    if (footer) {
+      var stamp = document.createElement("p");
+      stamp.className = "ny-footer";
+      stamp.textContent = "迎春 · ASRO";
+      footer.insertBefore(stamp, footer.firstChild);
+    }
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var confetti = document.createElement("div");
+      confetti.className = "ny-confetti";
+      confetti.setAttribute("aria-hidden", "true");
+      for (var i = 0; i < 28; i++) {
+        var star = document.createElement("span");
+        star.className = "ny-star";
+        star.textContent = i % 3 === 0 ? "✦" : (i % 3 === 1 ? "✧" : "•");
+        star.style.left = (i * 37 % 99) + "%";
+        star.style.top = (i * 53 % 94) + "%";
+        star.style.animationDelay = "-" + ((i * 17 % 70) / 10) + "s";
+        star.style.animationDuration = (4 + i % 6) + "s";
+        confetti.appendChild(star);
+      }
+      document.body.appendChild(confetti);
+    }
+  }
+  // Re-check every 30 seconds, on tab resume and on bfcache restoration.
+  // Reload cleans up old snow/light canvases and seasonal CSS at exact state changes.
+  function verifySeason() { if (season(new Date()) !== initial) window.location.reload(); }
+  setInterval(verifySeason, 30000);
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) verifySeason();
+  });
+  window.addEventListener("pageshow", verifySeason);
 })();
