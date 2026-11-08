@@ -1,54 +1,49 @@
-# ASRO Corporate Website / Pages-Home
+# ASRO — Pages-Home
 
-ASRO公式サイト Ver.2.0 の**白を基調としたデザイン刷新版**。静的なHTML・CSS・JavaScriptだけで動きます。
+ASRO公式サイトの新しいホームページ。2026年11月、以前のカード中心のサイトを破棄し、**Moonshot AI の情報設計・余白・タイポグラフィを参考にした独自のエディトリアルデザイン**へ全面刷新しました。Moonshot AI のコード・画像・文言は使用していません。
 
-> このリポジトリは開発用。既存の `asro.jp` 本番サイトや他のASROサービスは変更していません。
+## コンセプト
 
-## デザインと実装
+- **ASROそのものを主役にする**。「まだない、明日を創る。」をトップに大きく配置。
+- **研究に焦点**。Asra Nova、TripleAS、日本語AIへの取り組みを紹介。
+- **Kuupを象徴的な製品として紹介**。主要サービスへのリンクあり。
+- **ASRO AI / ASRO MOVIA / ASRO Security** を簡潔な3本の柱として紹介。
+- SchoolLinkやその他の個別・構想段階のサービスをトップページで主役にしない。
+- 白・黒・グレー中心。青を控えめに使用。立体球のオリジナルなビジュアルと微細な動きだけを採用。
 
-- ホワイトベースのミニマルなコーポレートデザイン
-- 共有されたASROのワードマーク・青いシンボル・Kuupのロゴから作成した軽量SVG
-- ヒーロー、事業紹介（AI / MOVIA / Security）、プロダクト、理念、技術紹介、フッター
-- スマートフォン・タブレット・PC対応
-- モバイルメニュー、製品詳細ダイアログ、スクロール演出
-- `prefers-reduced-motion` / キーボード操作 / スキップリンクへの対応
-- 外部JavaScriptライブラリ・ビルド工程不要
+## ファイル構成
 
-## 構成
+- `index.html` — HTML、CSS、必要最低限のJavaScriptを1ファイルに集約
+- `assets/asro-wordmark.svg` — 提供ロゴから作成したASROワードマークSVG
+- `assets/asro-symbol.svg` — 提供ロゴから作成したシンボルSVG
 
-```text
-index.html
-styles.css
-app.js
-assets/
-  asro-wordmark.svg
-  asro-symbol.svg
-  kuup-logo.svg
-```
+以前の `styles.css`、`app.js`、未使用の旧Kuup SVGは削除済みです。
 
-## ローカル実行
+## ローカル表示
 
 ```bash
 python3 -m http.server 8000
 ```
 
-ブラウザで `http://localhost:8000/` を開いてください。
+`http://localhost:8000/` を開いてください。外部ライブラリやビルドコマンドは不要です。
 
-## GitHub Pagesのプレビュー
+## GitHub Pages
 
-Repository Settings → Pages → Build and deployment → Deploy from a branch → `main` / `/(root)` → Save。
+Settings → Pages → Deploy from a branch → `main` / `/(root)` を指定すると、Pages公開用の設定ができます。設定後の想定URL:
 
-公開設定が完了していれば `https://oimo0.github.io/Pages-Home/` で表示できます。公開設定と実際のサイト表示は別途確認が必要です。
+https://oimo0.github.io/Pages-Home/
 
-## 本番反映前の確認
+**このリポジトリから本番 `asro.jp` へのデプロイは行っていません。**
 
-- 正式な運営情報・各製品の公開ステータス・説明を確認する
-- 初期デザインで追加した「ASRO-Hub」等、構想段階の名称を公開するか確認する
-- 正式なプライバシーポリシーや会社情報へのリンクを追加する
-- Lighthouse、PC・スマホ実機、Safari/Chrome、画面サイズのチェック
-- `asro.jp` の既存URLやCloudflare設定との整合性を確認する
-- 本番への自動デプロイはまだ設定していません
+## 公開前チェック
 
-## 備考
+- ASROの公式メッセージ、各研究テーマの説明、開発ステータスを確認
+- 提供された公式ロゴのベクター原本がある場合は差し替え
+- 実機でのChrome / Safari、スマホ・タブレット・PC表示の確認
+- アクセシビリティとLighthouse測定
+- 法的な表記、プライバシーへの導線等、正式公開に必要な情報を追加
+- 既存の `asro.jp` にデプロイする場合は既存の動的サービス・ルーティングを調査して別途移行
 
-ロゴは提供された画像を輪郭ベースでSVG化しています。元データの正式なベクター版がある場合はそちらへ置き換えてください。
+## 著作物
+
+サイト全体のデザインとレイアウトは独自実装です。参考サイトの文面やアセットはコピーしていません。
