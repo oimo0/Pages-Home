@@ -43,7 +43,7 @@
 
       "about.eyebrow": "About ASRO",
       "about.big": "まだない明日を、つくる。",
-      "about.p1": "ASROは、AI、ソフトウェア、そしてそれらを支えるインフラまでを一貫して手がけるテクノロジーブランドです。中心にあるのは、自社開発のAIモデル「Asra」。その力を、誰もが使える製品のカタチにしてお届けします。",
+      "about.p1": "ASROは、AI、ソフトウェア、そしてそれらを支えるインフラまでを一貫して手がけるテクノロジーブランドです。自社開発のAIモデル「Asra」をはじめ、使う人の毎日に届く製品を、ひとつずつカタチにしてお届けします。",
       "about.p2": "旧名はSORA CLOUD。2026年8月、ASROへと生まれ変わりました。名前は「そら」のアナグラムであり、「明日」への一歩でもあります。",
       "about.p3": "大げさな数字は掲げません。つくったものを、ひとつずつ、確かなカタチにしていく。それがASROのやり方です。",
 
@@ -56,7 +56,7 @@
       "cook.card.desc": "「こんなサイトがほしい」「こんなものを作りたい」。そのアイデアを、AIとの対話で実際に動くカタチへ変えていく制作ツールです。",
       "moot.card.desc": "画像、図形、テキストを動かしてアニメーションを作るツール。軽快な動作とAIのサポートで、はじめてでも映像づくりを楽しめます。",
       "plat.card.desc": "ASRO Accountによる共通ログイン、プロフィール、権限管理。ASROのすべての製品をつなぐ、共有基盤です。",
-      "asra.card.desc": "ASROが自社で開発するAIモデル。初のモデル「Asra-Nova-Pico」は0.5Bパラメータ、Sarashinaベースで開発中。日本語性能にこだわり、ASROの製品の頭脳を目指します。",
+      "asra.card.desc": "ASROが自社で開発するAIモデル。初のモデル「Asra-Nova-Pico」は0.5Bパラメータ、Sarashinaベースで開発中。日本語が得意なモデルです。",
       "security.card.desc": "製品を安全に届け続けるための部門。脆弱性の確認と修正、アカウントや公開機能、日々の運用の安全を守ります。",
 
       "div.eyebrow": "Divisions",
@@ -179,7 +179,7 @@
 
       /* ---- Asra ---- */
       "asra.meta.title": "Asra — ASROのAIモデル | ASRO",
-      "asra.h1": "ASROの頭脳を、自らの手で。",
+      "asra.h1": "小さくても、日本語には本気。",
       "asra.lead": "Asraは、ASROが自社開発するAIモデルです。初のモデル「Asra-Nova-Pico」は、0.5Bパラメータながら日本語性能に徹底的にこだわったモデル。現在開発中で、モデル自体はまだ公開していません。",
       "asra.btn.kuup": "Kuupで体験する",
       "asra.about.p1": "他社のモデルを借りるだけでは、製品の体験は他社の都合に左右されます。ASROは、自分たちの製品のために、自分たちでモデルをつくる道を選びました。それがAsraです。",
@@ -188,8 +188,8 @@
       "asra.f1.d": "日本語の細かなニュアンスと指示を、正確に読み取ります。",
       "asra.f2.t": "自然な日本語",
       "asra.f2.d": "日常の会話や相談にも、日本語らしく自然に応答します。",
-      "asra.f3.t": "製品のために",
-      "asra.f3.d": "KuupなどASROの製品の頭脳として、体験と一体で磨かれます。",
+      "asra.f3.t": "小さく、軽く",
+      "asra.f3.d": "パラメータは0.5B。軽量で、扱いやすいモデルを目指しています。",
       "asra.fact.name": "Asra（AIモデル）",
       "asra.fact.status": "開発中（未公開）",
       "asra.fact.params": "パラメータ",
@@ -264,7 +264,7 @@
 
       "about.eyebrow": "About ASRO",
       "about.big": "Building a tomorrow that doesn't exist yet.",
-      "about.p1": "ASRO is a technology brand working across AI, software, and the infrastructure that supports them. At its core is Asra, our own AI model — and our job is to shape its power into products anyone can use.",
+      "about.p1": "ASRO is a technology brand working across AI, software, and the infrastructure that supports them. From Asra, our own AI model, to products for everyday life — we shape each idea into a form anyone can use.",
       "about.p2": "Formerly known as SORA CLOUD, the brand became ASRO in August 2026. The name is an anagram of \"sora\" — and a step toward tomorrow (\"asu\" in Japanese).",
       "about.p3": "We don't lead with big numbers. We build things, one at a time, and give each of them a solid form. That's the ASRO way.",
 
@@ -277,7 +277,7 @@
       "cook.card.desc": "\"I wish this site existed.\" \"I want to build this.\" Cook turns those sparks into working things through conversation with AI.",
       "moot.card.desc": "A tool for animating images, shapes, and text. Snappy performance and AI assistance make video creation approachable for beginners.",
       "plat.card.desc": "One sign-in with ASRO Account, profiles, and permissions. The shared foundation connecting every ASRO product.",
-      "asra.card.desc": "ASRO's own AI model. Its first model, Asra-Nova-Pico — 0.5B parameters, based on Sarashina — is in development, focused entirely on Japanese-language performance, aiming to become the brain of ASRO's products.",
+      "asra.card.desc": "ASRO's own AI model. Its first model, Asra-Nova-Pico — 0.5B parameters, based on Sarashina — is in development. A model that's simply good at Japanese.",
       "security.card.desc": "The team that keeps our products safe to use: vulnerability checks and fixes, account and public-feature protection, and secure day-to-day operations.",
 
       "div.eyebrow": "Divisions",
@@ -393,7 +393,7 @@
       "plat.next": "Asra",
 
       "asra.meta.title": "Asra — ASRO's AI Model | ASRO",
-      "asra.h1": "Our brain, built by our own hands.",
+      "asra.h1": "Small in size, serious about Japanese.",
       "asra.lead": "Asra is the AI model ASRO develops in-house. Its first model, Asra-Nova-Pico, packs an obsession with Japanese-language performance into just 0.5B parameters. It is in development, and the model itself has not been released yet.",
       "asra.btn.kuup": "Try it in Kuup",
       "asra.about.p1": "Relying only on other companies' models means your product's experience is shaped by their decisions. ASRO chose to build its own model for its own products. That is Asra.",
@@ -402,8 +402,8 @@
       "asra.f1.d": "Reads the nuance and intent of Japanese instructions accurately.",
       "asra.f2.t": "Natural Japanese",
       "asra.f2.d": "Responds naturally in Japanese, from everyday conversation to consultations.",
-      "asra.f3.t": "Made for our products",
-      "asra.f3.d": "The brain of Kuup and other ASRO products, refined together with the experience.",
+      "asra.f3.t": "Small and light",
+      "asra.f3.d": "Just 0.5B parameters — built to stay light and easy to work with.",
       "asra.fact.name": "Asra (AI model)",
       "asra.fact.status": "In development (not released)",
       "asra.fact.params": "Parameters",
