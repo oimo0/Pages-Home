@@ -1,49 +1,55 @@
-# ASRO — Pages-Home
+# ASRO Official Website — Pages-Home
 
-ASRO公式サイトの新しいホームページ。2026年11月、以前のカード中心のサイトを破棄し、**Moonshot AI の情報設計・余白・タイポグラフィを参考にした独自のエディトリアルデザイン**へ全面刷新しました。Moonshot AI のコード・画像・文言は使用していません。
+ASRO公式ホームページの新デザイン（2026-11）。Moonshot AIの**研究を主役にした情報設計・大胆な文字組み・没入感**を参考に、ASRO独自のビジュアルで一から制作した静的サイト。
 
-## コンセプト
+## 最新版のデザイン
 
-- **ASROそのものを主役にする**。「まだない、明日を創る。」をトップに大きく配置。
-- **研究に焦点**。Asra Nova、TripleAS、日本語AIへの取り組みを紹介。
-- **Kuupを象徴的な製品として紹介**。主要サービスへのリンクあり。
-- **ASRO AI / ASRO MOVIA / ASRO Security** を簡潔な3本の柱として紹介。
-- SchoolLinkやその他の個別・構想段階のサービスをトップページで主役にしない。
-- 白・黒・グレー中心。青を控えめに使用。立体球のオリジナルなビジュアルと微細な動きだけを採用。
+- ダークな没入型ヒーロー。「明日を、創る。」
+- **正しいASRO文字なしロゴ**: ユーザーが提供した黒い3パーツのマークを輪郭トレースし、SVGとして使用
+- Research: Asra Nova / TripleAS / Accessible AI
+- Product: Kuup の製品紹介（UIは説明用コンセプト）
+- Our Fields: ASRO AI / ASRO MOVIA / ASRO Security
+- About: ASROの理念
+- PC / Android / iOSのレスポンシブ構成。モバイルナビ、読みやすいキーボード操作、reduced-motion 対応
+- 外部ライブラリ、ビルド工程、Cookie/トラッキングなし
 
-## ファイル構成
+## ファイル
 
-- `index.html` — HTML、CSS、必要最低限のJavaScriptを1ファイルに集約
-- `assets/asro-wordmark.svg` — 提供ロゴから作成したASROワードマークSVG
-- `assets/asro-symbol.svg` — 提供ロゴから作成したシンボルSVG
+```
+index.html
+styles.css
+site.js
+assets/asro-symbol.svg   # 実際に提供されたASROロゴの輪郭から作成
+assets/asro-wordmark.svg # 提供されたASRO文字ロゴから作成
+README.md
+```
 
-以前の `styles.css`、`app.js`、未使用の旧Kuup SVGは削除済みです。
+以前誤って使っていた青い別サービスのシンボルは **完全に置換** しました。
 
-## ローカル表示
+## ローカル起動
 
 ```bash
 python3 -m http.server 8000
 ```
 
-`http://localhost:8000/` を開いてください。外部ライブラリやビルドコマンドは不要です。
+ブラウザで `http://localhost:8000/` を開きます。
 
-## GitHub Pages
+## プレビュー
 
-Settings → Pages → Deploy from a branch → `main` / `/(root)` を指定すると、Pages公開用の設定ができます。設定後の想定URL:
+GitHubで Settings → Pages → Build and deployment → Deploy from a branch → `main` / `/(root)` を指定すると、公開設定後に下記から閲覧できます。
 
 https://oimo0.github.io/Pages-Home/
 
-**このリポジトリから本番 `asro.jp` へのデプロイは行っていません。**
+※ Pagesの公開状態や外部ブラウザでの表示は別途確認が必要です。既存の **asro.jp 本番サーバーは変更していません**。
 
-## 公開前チェック
+## 公開前確認
 
-- ASROの公式メッセージ、各研究テーマの説明、開発ステータスを確認
-- 提供された公式ロゴのベクター原本がある場合は差し替え
-- 実機でのChrome / Safari、スマホ・タブレット・PC表示の確認
-- アクセシビリティとLighthouse測定
-- 法的な表記、プライバシーへの導線等、正式公開に必要な情報を追加
-- 既存の `asro.jp` にデプロイする場合は既存の動的サービス・ルーティングを調査して別途移行
+- ロゴのオリジナルSVGが入手できたら、輪郭トレース版を置換する
+- Asra Nova / TripleAS / Kuupの説明と公開状態をレビューする
+- 実機でChrome/Safari/モバイルメニュー/画面幅/速度を確認
+- 正式な会社情報や法的ページが必要なら追加
+- `asro.jp` に切り替える前にCloudflareや各サービスの既存ルートを監査する
 
-## 著作物
+## 参考・権利
 
-サイト全体のデザインとレイアウトは独自実装です。参考サイトの文面やアセットはコピーしていません。
+Moonshot AIのウェブサイトの情報構成・雰囲気を参考にしていますが、HTML・CSS・アニメーション・文言・図版はASRO用の独自実装です。Moonshot AIのコードや画像は複製していません。
