@@ -635,12 +635,6 @@ window.ASROSeasonState = (function () {
   fontLink.href = "https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap";
   document.head.appendChild(fontLink);
 
-  /* Gold star favicon for the season */
-  var fav = document.querySelector("link[rel='icon']") || document.createElement("link");
-  fav.rel = "icon";
-  fav.href = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#c6a15b" d="M12 1.8l3.1 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.6 3.8L7 14.4 1.4 9.4l7.5-.7z"/></svg>');
-  document.head.appendChild(fav);
-
   /* Delicate gold sparkles in the hero and the dark Asra band */
   document.querySelectorAll(".hero, .asra-band").forEach(function (host) {
     for (var s = 0; s < 16; s++) {
