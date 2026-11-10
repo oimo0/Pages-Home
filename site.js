@@ -52,7 +52,7 @@
 
       "products.eyebrow": "Products",
       "products.title": "アイデアを、使えるカタチに。",
-      "products.lead": "主力のAIチャット「Kuup」を中心に、学びと創造のための製品を開発しています。カードを開くと、それぞれの詳しい紹介ページに進めます。",
+      "products.lead": "主力のAIチャット「Kuup」を中心に、学びと創造のための製品を開発しています。各製品の概要や開発状況を紹介しています。",
       "kuup.card.title": "話すほど、頼れるAIに。",
       "kuup.card.desc": "Kuupは、ASROのAIモデルを活かしたAIチャットサービス。質問への回答はもちろん、文章づくり、調べもの、ファイルの読み解き、画像生成まで。毎日の「聞きたい」「作りたい」に寄り添います。",
       "schoollink.card.desc": "時間割、宿題、持ち物、配布物。クラスで共有するものを、ひとつの画面にまとめた学級向けサービスです。",
@@ -91,11 +91,11 @@
       "pd.about.h": "この製品について",
 
       /* ---- Kuup ---- */
+      "kuup.status": "試験中",
       "kuup.meta.title": "Kuup — ASROのAIチャット | ASRO",
       "kuup.h1": "話すほど、頼れるAIに。",
       "kuup.lead": "Kuupは、ASROのAIチャットサービスです。質問への回答、文章づくり、アイデア出し、ファイルの読み解きまで。日常のあらゆる「知りたい」「作りたい」を、ひとつのチャットで。",
-      "kuup.btn.open": "Kuupを開く",
-      "kuup.btn.site": "Kuup紹介サイト",
+
       "kuup.about.p1": "Kuupの頭脳には、ASROのAI技術が活かされています。日本語での自然な対話を大切にし、会話の流れを記憶するメモリ機能や、エージェント機能「Ultra」による自律的な作業サポートなど、使うほどに手放せなくなる体験を目指しています。",
       "kuup.about.p2": "Web検索や画像生成、SchoolLinkとの連携にも対応。調べる、書く、作る、まとめる。ひとつの場所で完結する、ASROの主力製品です。",
       "kuup.f1.t": "AIチャット",
@@ -184,7 +184,6 @@
       "asra.meta.title": "Asra — ASROのAIモデル | ASRO",
       "asra.h1": "小さくても、日本語には本気。",
       "asra.lead": "Asraは、ASROが自社開発するAIモデルです。初のモデル「Asra-Nova-Pico」は、0.5Bパラメータながら日本語性能に徹底的にこだわったモデル。現在開発中で、モデル自体はまだ公開していません。",
-      "asra.btn.kuup": "Kuupで体験する",
       "asra.about.p1": "他社のモデルを借りるだけでは、製品の体験は他社の都合に左右されます。ASROは、自分たちの製品のために、自分たちでモデルをつくる道を選びました。それがAsraです。",
       "asra.about.p2": "そして今、Asra初のモデル「Asra-Nova-Pico」を開発しています。開発はASRO AIが担当。Sarashinaをベースに、0.5Bという小ささでどこまで日本語が扱えるか、挑戦が続いています。",
       "asra.f1.t": "日本語の指示理解",
@@ -235,8 +234,7 @@
       "security.f3.t": "運用の見守り",
       "security.f3.d": "日々の運用を監視し、異常の早期発見につなげます。",
       "security.fact.name": "ASRO Security（セキュリティ部門）",
-      "security.fact.by": "ASRO Security",
-      "security.next": "Kuup"
+      "security.fact.by": "ASRO Security"
     },
 
     en: {
@@ -286,7 +284,7 @@
 
       "products.eyebrow": "Products",
       "products.title": "Ideas, shaped into things you can use.",
-      "products.lead": "Led by Kuup, our AI chat service, we build products for learning and creating. Open a card to visit each product's page.",
+      "products.lead": "Led by Kuup, our AI chat service, we build products for learning and creating. Explore our products and their development status.",
       "kuup.card.title": "An AI that grows more reliable the more you talk.",
       "kuup.card.desc": "Kuup is an AI chat service powered by ASRO's AI model. Answers, writing help, research, reading files, generating images — a companion for every everyday \"I want to know\" and \"I want to make\".",
       "schoollink.card.desc": "Timetables, homework, belongings, handouts — everything a class shares, gathered into one clear screen.",
@@ -323,11 +321,11 @@
       "pd.features": "What it does",
       "pd.about.h": "About this product",
 
+      "kuup.status": "In testing",
       "kuup.meta.title": "Kuup — AI Chat by ASRO | ASRO",
       "kuup.h1": "An AI that grows more reliable the more you talk.",
       "kuup.lead": "Kuup is ASRO's AI chat service. Answers to your questions, help with writing, brainstorming, reading files — everything you want to know and make, in a single chat.",
-      "kuup.btn.open": "Open Kuup",
-      "kuup.btn.site": "Kuup product site",
+
       "kuup.about.p1": "Kuup runs on ASRO's AI technology, with a focus on natural Japanese conversation. Memory that carries context across chats and an agent feature called Ultra that works through tasks on its own make it a companion you'll keep coming back to.",
       "kuup.about.p2": "With web search, image generation, and SchoolLink integration, Kuup brings research, writing, and making together in one place — ASRO's flagship product.",
       "kuup.f1.t": "AI chat",
@@ -411,7 +409,6 @@
       "asra.meta.title": "Asra — ASRO's AI Model | ASRO",
       "asra.h1": "Small in size, serious about Japanese.",
       "asra.lead": "Asra is the AI model ASRO develops in-house. Its first model, Asra-Nova-Pico, packs an obsession with Japanese-language performance into just 0.5B parameters. It is in development, and the model itself has not been released yet.",
-      "asra.btn.kuup": "Try it in Kuup",
       "asra.about.p1": "Relying only on other companies' models means your product's experience is shaped by their decisions. ASRO chose to build its own model for its own products. That is Asra.",
       "asra.about.p2": "And now, ASRO AI is developing Asra's first model: Asra-Nova-Pico. Based on Sarashina, it is an ongoing challenge — how far can Japanese be handled at just 0.5B?",
       "asra.f1.t": "Japanese instruction understanding",
@@ -461,8 +458,7 @@
       "security.f3.t": "Watching operations",
       "security.f3.d": "Monitoring daily operations to catch anomalies early.",
       "security.fact.name": "ASRO Security (security division)",
-      "security.fact.by": "ASRO Security",
-      "security.next": "Kuup"
+      "security.fact.by": "ASRO Security"
     }
   };
 
