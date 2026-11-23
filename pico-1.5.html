@@ -14,10 +14,29 @@ nav{position:absolute;z-index:2;inset:0 0 auto;display:flex;align-items:center;j
 .intro{position:relative;isolation:isolate;overflow:hidden;min-height:100svh;display:grid;place-items:center;text-align:center;padding:82px 18px 74px;background:radial-gradient(ellipse at 50% 113%,#64419b 0%,#251d4e 38%,#090b16 74%)}.intro::before{content:"";position:absolute;inset:auto -12% -50%;height:75%;border:1px solid #c4b4ff9c;border-radius:50%;box-shadow:0 0 70px #a080ff86,inset 0 0 85px #b293ff55;z-index:-1}.intro::after{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 24% 30%,#c4b4ff 0 1px,transparent 2px),radial-gradient(circle at 80% 23%,#ffdd9f 0 1px,transparent 2px),radial-gradient(circle at 71% 71%,#c4b4ff 0 1px,transparent 2px),radial-gradient(circle at 12% 68%,#c4b4ff 0 1px,transparent 2px),radial-gradient(circle at 87% 51%,#ccc 0 1px,transparent 2px)}
 h1,h2,h3,p{margin-top:0}h1{margin:0;font-size:clamp(48px,11vw,150px);line-height:1.08;font-weight:850;letter-spacing:-.055em;animation:rise 1.05s cubic-bezier(.15,.65,.2,1) both}h2{font-size:clamp(27px,5vw,54px);line-height:1.2;letter-spacing:-.025em;margin-bottom:20px}h3{font-size:21px;line-height:1.35;margin-bottom:12px}.product{margin:20px 0 0;color:var(--gold);font-size:clamp(17px,3vw,30px);font-weight:650;letter-spacing:.045em;animation:rise .9s .48s both}.scroll{position:absolute;bottom:24px;left:50%;translate:-50% 0;color:var(--muted);white-space:nowrap;animation:appear .8s 1s both}.scroll span{display:block;text-align:center;color:var(--gold);font-size:24px}
 @keyframes rise{from{opacity:0;transform:translateY(32px);filter:blur(9px)}to{opacity:1;transform:none;filter:none}}@keyframes appear{from{opacity:0}to{opacity:1}}
-.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.section{padding:clamp(54px,9vw,104px) 0;border-bottom:1px solid var(--line);scroll-margin-top:16px}.sub{color:var(--muted);max-width:70ch}.label{color:var(--gold);font-size:13px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}.screen{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#080911;box-shadow:0 16px 50px #02030a}.screen video{display:block;width:100%;aspect-ratio:16/9;background:#090b16}.video-options{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}.button,button{display:inline-flex;align-items:center;min-height:44px;padding:8px 17px;border-radius:9px;border:1px solid var(--line);background:#171a2f;color:var(--fg);font:inherit;text-decoration:none;cursor:pointer}.button:hover,button:hover{border-color:var(--violet)}[hidden]{display:none!important}
+.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.section{padding:clamp(54px,9vw,104px) 0;border-bottom:1px solid var(--line);scroll-margin-top:16px}.sub{color:var(--muted);max-width:70ch}.label{color:var(--gold);font-size:13px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}.screen{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#080911;box-shadow:0 16px 50px #02030a}.screen video{display:block;width:100%;aspect-ratio:16/9;background:#090b16}.button,button{display:inline-flex;align-items:center;min-height:44px;padding:8px 17px;border-radius:9px;border:1px solid var(--line);background:#171a2f;color:var(--fg);font:inherit;text-decoration:none;cursor:pointer}.button:hover,button:hover{border-color:var(--violet)}[hidden]{display:none!important}
 .metrics,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,246px),1fr));gap:14px;margin:25px 0}.card{padding:23px;border:1px solid var(--line);border-radius:16px;background:#131526}.card p:last-child{margin-bottom:0}.metric{display:block;color:var(--violet);font-size:clamp(31px,5vw,56px);font-weight:820;line-height:1.2;margin-bottom:9px}.table-holder{overflow-x:auto;border:1px solid var(--line);border-radius:13px;margin:20px 0}table{width:100%;border-collapse:collapse;text-align:right;white-space:nowrap}th,td{padding:12px 13px;border-bottom:1px solid var(--line)}thead{background:#191b31}tbody tr:last-child>*{border-bottom:0}th:first-child{text-align:left}caption{text-align:left;padding:12px 13px;color:var(--muted);white-space:normal}.note{color:var(--muted);font-size:.9rem}.api{background:radial-gradient(ellipse at 80% 110%,#30214e,transparent 60%)}.date{color:var(--gold)}footer{padding:24px 0;color:var(--muted);font-size:14px}footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px}
 @media(max-width:480px){nav{font-size:12px}.screen{border-radius:10px}th,td{padding:9px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+
+/* Launch film and typography */
+.intro{background:radial-gradient(ellipse at 50% 125%,#7656bc 0%,#211940 39%,#090b16 72%)}
+.intro::before{inset:auto -25% -44%;height:67%;border-color:#b1a0ff8f;box-shadow:0 0 85px #a285ff7c,inset 0 0 55px #9876ea63}
+h1{letter-spacing:-.075em;text-shadow:0 10px 50px #c3a6ff42}
+.product{color:#e9ddff;margin-top:26px}
+.scroll{text-decoration:none;font-size:14px}
+.scroll span{margin:10px auto 0;color:var(--fg);font-size:18px;width:36px;height:36px;line-height:34px;border:1px solid #a89ac865;border-radius:50%}
+.film-section{background:radial-gradient(ellipse at 50% 60%,#211a3b,transparent 76%)}
+.film-header{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:21px}
+.film-header h2{margin:0}
+.film-header time{color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.12em}
+.screen{border:1px solid #7160978c;border-radius:18px;box-shadow:0 22px 64px #03040e99,0 0 52px #8764e827}
+.film-actions{display:flex;justify-content:flex-end;margin-top:14px}
+.film-link{display:inline-flex;align-items:center;gap:11px;min-height:44px;padding:7px 14px;color:#e3d7ff;font-size:14px;text-decoration:none;border:1px solid #76679783;border-radius:999px;background:#171629}
+.film-link:hover{background:#28203e;border-color:var(--violet)}
+.metrics .card{background:linear-gradient(145deg,#201b37,#121423 75%);border-color:#4c426b}
+.metrics .metric{color:#e5d7ff}
+@media(max-width:480px){.screen{border-radius:11px}.film-header{margin-bottom:14px}.film-header time{font-size:13px}}
 </style>
 </head>
 <body>
@@ -27,16 +46,12 @@ h1,h2,h3,p{margin-top:0}h1{margin:0;font-size:clamp(48px,11vw,150px);line-height
   <div><h1 id="tagline">もっと上へ。</h1><p class="product">Asra Nova Pico 1.5</p></div>
   <a class="scroll" href="#film">公式紹介動画を見る<span aria-hidden="true">↓</span></a>
 </section>
-<section class="section" id="film"><div class="wrap">
-  <h2>公式紹介動画</h2>
-  <div class="screen"><video id="launch-video" controls muted playsinline preload="metadata" poster="https://asro.jp/assets/pico-1.5/poster.jpg" aria-label="Asra Nova Pico 1.5 公式紹介動画">
+<section class="section film-section" id="film"><div class="wrap">
+  <div class="film-header"><h2>公式紹介動画</h2><time datetime="PT2M6S" aria-label="2分6秒">02:06</time></div>
+  <div class="screen"><video id="launch-video" controls playsinline preload="metadata" poster="https://asro.jp/assets/pico-1.5/poster.jpg" aria-label="Asra Nova Pico 1.5 公式紹介動画">
     <source src="https://asro.jp/assets/pico-1.5/intro.mp4" type="video/mp4">
   </video></div>
-  <div class="video-options">
-    <button id="rewind" type="button" hidden>10秒戻す</button>
-    <button id="sound" type="button" hidden>音声をオン</button>
-    <a class="button" href="https://asro.jp/assets/pico-1.5/intro.mp4">動画を直接開く ↗</a>
-  </div>
+  <div class="film-actions"><a class="film-link" href="https://asro.jp/assets/pico-1.5/intro.mp4" target="_blank" rel="noopener">全体で開く<span aria-hidden="true">↗</span></a></div>
 </div></section>
 <section class="section" id="comparison"><div class="wrap">
   <p class="label">200問で比較</p>
@@ -84,26 +99,31 @@ h1,h2,h3,p{margin-top:0}h1{margin:0;font-size:clamp(48px,11vw,150px);line-height
 <footer><div class="wrap"><span>© 2026 ASRO AI</span><a href="https://ai.asro.jp/">ASRO AI</a><a href="https://asro.jp/">ASRO</a><a href="https://developer.asro.jp/">ASRO Developer</a></div></footer>
 <script>
 const video = document.querySelector('#launch-video');
-const rewind = document.querySelector('#rewind');
-const sound = document.querySelector('#sound');
-rewind.hidden = sound.hidden = false;
-rewind.addEventListener('click', () => {
-  video.currentTime = Math.max(0, video.currentTime - 10);
+const filmLink = document.querySelector('.scroll');
+
+async function playWithSound() {
+  video.muted = false;
+  try {
+    await video.play();
+  } catch (error) {
+    if (error.name !== 'NotAllowedError') return;
+    // Opening a page or scrolling may not grant permission for audible playback.
+    video.muted = true;
+    await video.play().catch(() => {});
+  }
+}
+
+filmLink.addEventListener('click', () => {
+  playWithSound();
 });
-sound.addEventListener('click', () => {
-  video.muted = !video.muted;
-});
-video.addEventListener('volumechange', () => {
-  sound.textContent = video.muted ? '音声をオン' : '消音する';
-});
+
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver(([entry]) => {
     if (!entry.isIntersecting || !(entry.rootBounds?.height > 0)) return;
-    const visibleHeight = entry.intersectionRect.height;
     const targetHeight = Math.min(entry.rootBounds.height, entry.boundingClientRect.height);
-    if (visibleHeight < targetHeight * .5) return;
+    if (entry.intersectionRect.height < targetHeight * .5) return;
     observer.disconnect();
-    if (video.paused && video.currentTime === 0) video.play().catch(() => {});
+    if (video.paused && video.currentTime === 0) playWithSound();
   }, {threshold: [0, .25, .5, .75]});
   observer.observe(video);
 }
