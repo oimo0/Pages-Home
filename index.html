@@ -19,127 +19,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=20261110-brand-v1">
-<style id="asro-launch-20261123-style">
-  #asro-launch-20261123 {
-    position: relative;
-    isolation: isolate;
-    display: grid;
-    align-items: center;
-    overflow: hidden;
-    box-sizing: border-box;
-    width: min(1180px, calc(100% - 32px));
-    min-height: 260px;
-    margin: 20px auto 12px;
-    padding: clamp(26px, 5vw, 62px);
-    border: 1px solid #5c5486;
-    border-radius: 24px;
-    background:
-      radial-gradient(ellipse at 82% 95%, #49337d 0%, transparent 56%),
-      radial-gradient(ellipse at 92% 0%, #283a78 0%, transparent 48%),
-      #101024;
-    color: #fff;
-    box-shadow: 0 14px 36px #25184e38;
-    text-align: left;
-  }
-  #asro-launch-20261123::before,
-  #asro-launch-20261123::after {
-    content: "";
-    position: absolute;
-    pointer-events: none;
-    inset: 0;
-    z-index: -2;
-  }
-  #asro-launch-20261123::before {
-    background: linear-gradient(105deg, transparent 34%, #e5cafa25 49%, transparent 65%);
-    background-size: 220% 100%;
-    animation: asro-launch-sheen 8s ease-in-out 3;
-  }
-  #asro-launch-20261123::after {
-    background: radial-gradient(circle at 68% 19%, #fff4c7 0 1px, transparent 3px),
-      radial-gradient(circle at 92% 24%, #fff 0 1px, transparent 3px),
-      radial-gradient(circle at 59% 72%, #cab7ff 0 1px, transparent 3px),
-      radial-gradient(circle at 87% 82%, #ffd890 0 2px, transparent 5px),
-      radial-gradient(circle at 96% 65%, #ddd6ff 0 1px, transparent 3px),
-      radial-gradient(circle at 76% 88%, #b9a7ff 0 1px, transparent 3px);
-  }
-  #asro-launch-20261123 .launch-orbit {
-    position: absolute;
-    z-index: -1;
-    right: -3%;
-    top: 50%;
-    width: min(48%, 510px);
-    aspect-ratio: 1;
-    transform: translateY(-50%) rotate(-30deg);
-    border-radius: 50%;
-    background: radial-gradient(ellipse at 50% 50%, #775be600 43%, #a67eff45 54%, #44328600 69%);
-  }
-  #asro-launch-20261123 .launch-orbit::before,
-  #asro-launch-20261123 .launch-orbit::after {
-    content: "";
-    position: absolute;
-    inset: 16% 7%;
-    border-radius: 50%;
-    border: 1px solid #c7acff80;
-    box-shadow: 0 0 38px #8f71f9b0, inset 0 0 28px #9276f180;
-  }
-  #asro-launch-20261123 .launch-orbit::after {
-    inset: 24% 2%;
-    border-color: #ffe2a9ab;
-    box-shadow: 0 0 28px #ffc88672, inset 0 0 15px #e1b9fe65;
-    transform: rotate(28deg);
-  }
-  #asro-launch-20261123 .launch-title {
-    margin: 0 0 12px;
-    color: #fff;
-    font-size: clamp(25px, 4.2vw, 49px);
-    font-weight: 800;
-    line-height: 1.18;
-    letter-spacing: .02em;
-    text-transform: none;
-  }
-  #asro-launch-20261123 .launch-time {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 2px 14px;
-    color: #ffe4a7;
-    font-size: clamp(15px, 2vw, 21px);
-    font-weight: 700;
-  }
-  #asro-launch-20261123 .launch-hour {
-    color: #fff2ce;
-    font-size: clamp(48px, 8vw, 112px);
-    font-weight: 800;
-    font-variant-numeric: tabular-nums;
-    line-height: .96;
-    letter-spacing: -.055em;
-    text-shadow: 0 0 32px #ffcb8755;
-  }
-  #asro-launch-20261123 [lang="en"] { display: none; }
-  html[lang="en"] #asro-launch-20261123 [lang="ja"] { display: none; }
-  html[lang="en"] #asro-launch-20261123 [lang="en"] { display: inline; }
-  @keyframes asro-launch-sheen {
-    0%, 100% { background-position: 100% 0; }
-    55%, 80% { background-position: 0 0; }
-  }
-  @media (max-width: 600px) {
-    #asro-launch-20261123 { min-height: 190px; margin-top: 14px; }
-    #asro-launch-20261123 .launch-orbit { right: -19%; width: 66%; opacity: .63; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    #asro-launch-20261123::before { animation: none; }
-  }
-  #asro-launch-20261123 {
-    margin-top: calc(var(--header-h, 64px) + 20px);
-  }
-  #asro-launch-20261123 + .hero { padding-top: 84px; }
-  @media (max-width: 600px) {
-    #asro-launch-20261123 {
-      margin-top: calc(var(--header-h, 64px) + 14px);
-    }
-    #asro-launch-20261123 + .hero { padding-top: 56px; }
-  }
-</style>
 </head>
 <body>
 <header class="site-header">
@@ -166,17 +45,7 @@
 </header>
 
 <main>
-  <section id="asro-launch-20261123" aria-labelledby="asro-launch-title">
-    <div class="launch-orbit" aria-hidden="true"></div>
-    <div>
-      <h2 class="launch-title" id="asro-launch-title"><span lang="ja">ASRO 新製品発表</span><span lang="en">ASRO Product Announcement</span></h2>
-      <time class="launch-time" datetime="2026-11-23T21:00:00+09:00">
-        <span lang="ja">11月23日（月・祝）</span><span lang="en">Monday, November 23</span>
-        <strong class="launch-hour">21:00</strong>
-        <span>JST</span>
-      </time>
-    </div>
-  </section>
+  <section class="pico-release" aria-label="Asra Nova Pico 1.5" style="max-width:1100px;margin:calc(var(--header-h, 64px) + 18px) auto 18px;width:calc(100% - 32px);padding:clamp(24px,6vw,62px);border-radius:22px;color:#fff;background:radial-gradient(ellipse at 95% 110%,#6b46aa,transparent 65%),linear-gradient(135deg,#17152e,#252453);box-sizing:border-box"><p style="margin:0 0 6px;color:#ffdd9f;font-size:15px;font-weight:700">Asra Nova Pico 1.5</p><h2 style="color:inherit;margin:0 0 18px;font-size:clamp(32px,6vw,65px);line-height:1.1">もっと上へ。</h2><a id="pico-release-link" href="/pico-1.5.html" style="display:inline-block;background:#fff;color:#1b1630;padding:10px 18px;border-radius:8px;font-weight:700;text-decoration:underline">発表ページを見る →</a></section>
   <!-- HERO -->
   <section class="hero">
     <div class="xmas-baubles" aria-hidden="true">
